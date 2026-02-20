@@ -1,0 +1,1388 @@
+/* 
+   REGAL EARTHY THEME - Zdokonalená verze
+   Barvy: Hluboká čokoládově hnědá, pražené espresso, antické zlato, stárnoucí papír.
+*/
+
+:root {
+    /* Královská & Zemitá Paleta */
+    --clr-bg-light: #F9F6F0;
+    --clr-bg-dark: #2B1E16;
+
+    --clr-text-main: #3D2B1F;
+    --clr-text-muted: #735D4F;
+    --clr-text-light: #E8DDCD;
+
+    --clr-gold: #C0924A;
+    --clr-gold-light: #DAB174;
+    --clr-gold-dim: #997134;
+
+    /* Fonty - Monarchie a Teplo */
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Lora', serif;
+
+    /* Tvary - Královské Ostré rohy */
+    --radius: 2px;
+
+    --shadow-regal: 0 15px 40px rgba(45, 30, 22, 0.12);
+    --shadow-hover: 0 20px 45px rgba(45, 30, 22, 0.18);
+
+    /* Plynulé moderní přechody */
+    --transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--clr-bg-light);
+    color: var(--clr-text-main);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    font-size: 16px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    /* Luxusní "papírový/plátnový" pattern šumu */
+    background-image: radial-gradient(var(--clr-gold) 0.5px, transparent 0.5px);
+    background-size: 30px 30px;
+    background-color: var(--clr-bg-light);
+    background-blend-mode: color-burn;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(249, 246, 240, 0.96);
+    z-index: -1;
+}
+
+/* Base Typografie */
+h1,
+h2,
+h3,
+h4,
+h5,
+.logo-main,
+.top-bar-text {
+    font-family: var(--font-heading);
+    color: var(--clr-text-main);
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-gold);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--clr-gold-dim);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 6%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-gold {
+    color: var(--clr-gold) !important;
+}
+
+/* Zlatý dělič (Krásný vizuální prvek) */
+.divider-ornate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0 30px;
+    color: var(--clr-gold);
+}
+
+.divider-ornate.left {
+    justify-content: flex-start;
+}
+
+.divider-ornate span {
+    width: 60px;
+    height: 1px;
+    background-color: var(--clr-gold);
+    opacity: 0.6;
+}
+
+/* Zlatá Královská Tlačítka se SILKY SMOOTH animací */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 35px;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.5s, color 0.5s;
+    border-radius: var(--radius);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-gold {
+    background-color: var(--clr-gold);
+    color: #fff;
+    border: 1px solid var(--clr-gold-light);
+    box-shadow: 0 4px 15px rgba(192, 146, 74, 0.3);
+}
+
+/* Velmi jemný lesk/gradient plnění */
+.btn-gold::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--clr-gold-dim);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: -1;
+}
+
+.btn-gold:hover {
+    box-shadow: 0 12px 30px rgba(192, 146, 74, 0.5);
+    transform: translateY(-4px);
+    color: #fff;
+    border-color: var(--clr-gold-dim);
+}
+
+.btn-gold:hover::before {
+    transform: scaleX(1);
+}
+
+.btn-outline-gold {
+    background-color: transparent;
+    color: var(--clr-gold);
+    border: 1px solid var(--clr-gold);
+}
+
+.btn-outline-gold::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--clr-gold);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: -1;
+}
+
+.btn-outline-gold:hover {
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(192, 146, 74, 0.25);
+}
+
+.btn-outline-gold:hover::before {
+    transform: scaleX(1);
+}
+
+
+/* Plovoucí okénka - Espresso-Zlatá kombince */
+.floating-contact {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 2000;
+}
+
+.contact-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--clr-bg-dark);
+    color: var(--clr-gold);
+    border: 2px solid var(--clr-gold);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.4s, background-color 0.4s;
+    box-shadow: 0 8px 25px rgba(43, 30, 22, 0.4);
+}
+
+.btn-border-glow {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 50%;
+    border: 1px solid var(--clr-gold);
+    opacity: 0;
+    transition: var(--transition);
+    pointer-events: none;
+    animation: pulseSlow 3s infinite;
+}
+
+@keyframes pulseSlow {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.contact-btn:hover {
+    background-color: var(--clr-gold);
+    color: var(--clr-bg-dark);
+    transform: scale(1.05);
+}
+
+.contact-btn:hover .btn-border-glow {
+    opacity: 0;
+    animation: none;
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.contact-tooltip {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%) translateX(10px);
+    background-color: var(--clr-bg-dark);
+    color: var(--clr-gold);
+    padding: 8px 16px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-style: italic;
+    border: 1px solid rgba(192, 146, 74, 0.3);
+    visibility: hidden;
+    opacity: 0;
+    white-space: nowrap;
+    transition: var(--transition);
+    border-radius: var(--radius);
+}
+
+.contact-btn:hover .contact-tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+.toast {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--clr-bg-dark);
+    color: var(--clr-gold);
+    border: 1px solid var(--clr-gold);
+    padding: 12px 25px;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    z-index: 3000;
+    transition: top 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.toast.show {
+    top: 30px;
+}
+
+
+/* Top Bar */
+.top-bar {
+    background-color: var(--clr-bg-dark);
+    color: var(--clr-gold);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.75rem;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+.top-bar-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-bar-border {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--clr-gold), transparent);
+}
+
+
+/* Hlavní Navigace */
+.royal-nav {
+    background-color: rgba(249, 246, 240, 0.98);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(192, 146, 74, 0.2);
+    transition: padding 0.5s ease, box-shadow 0.5s ease;
+}
+
+.royal-nav.scrolled {
+    padding: 5px 0;
+    box-shadow: 0 5px 20px rgba(43, 30, 22, 0.08);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-grp {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex: 1;
+}
+
+.nav-left {
+    justify-content: flex-end;
+}
+
+.nav-right {
+    justify-content: flex-start;
+}
+
+.nav-link {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--clr-text-main);
+    position: relative;
+    padding: 10px 0;
+    transition: color 0.4s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--clr-gold);
+    transition: width 0.4s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--clr-gold);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* --- NOVÝ JAZYKOVÝ PŘEPÍNAČ V NAVIGACI (ZVĚTŠENÝ S HOVEREM) --- */
+.lang-switch-nav {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-left: 1px solid rgba(192, 146, 74, 0.3);
+    padding-left: 20px;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    font-family: var(--font-heading);
+    color: var(--clr-text-main);
+    opacity: 0.6;
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.lang-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(192, 146, 74, 0.1);
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: -1;
+}
+
+.lang-btn:hover {
+    opacity: 1;
+    color: var(--clr-gold);
+    transform: translateY(-2px);
+}
+
+.lang-btn:hover::before {
+    transform: translateY(0);
+}
+
+.lang-btn.active {
+    opacity: 1;
+    color: var(--clr-bg-light);
+    background-color: var(--clr-gold);
+    border-color: var(--clr-gold);
+    box-shadow: 0 4px 10px rgba(192, 146, 74, 0.3);
+}
+
+.mobile-lang .lang-btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.mobile-lang .lang-btn:hover {
+    color: var(--clr-gold);
+    border-color: var(--clr-gold);
+    background-color: rgba(192, 146, 74, 0.1);
+}
+
+.mobile-lang .lang-btn.active {
+    background-color: var(--clr-gold);
+    color: var(--clr-bg-dark);
+}
+
+
+/* Královský Znak */
+.crest-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 40px;
+    flex: 0;
+    text-align: center;
+}
+
+.logo-main {
+    font-size: 2.2rem;
+    line-height: 1.1;
+    letter-spacing: 5px;
+    color: var(--clr-text-main);
+    transition: color 0.4s ease;
+}
+
+.crest-box:hover .logo-main {
+    color: var(--clr-gold);
+}
+
+.crest-top,
+.crest-bottom {
+    font-size: 0.65rem;
+    font-family: var(--font-heading);
+    color: var(--clr-gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.crest-top {
+    margin-bottom: -2px;
+}
+
+.crest-bottom {
+    margin-top: 2px;
+}
+
+
+/* Mobilní Menu */
+.menu-toggle-wrapper {
+    margin-left: auto;
+    display: none;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    display: flex;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 2px;
+    background-color: var(--clr-text-main);
+    transition: 0.3s;
+}
+
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--clr-bg-dark);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 5%;
+    border-bottom: 1px solid rgba(192, 146, 74, 0.2);
+}
+
+.mobile-nav-header .logo-main {
+    color: var(--clr-gold);
+    font-size: 1.8rem;
+}
+
+.close-menu {
+    font-size: 3rem;
+    color: var(--clr-gold);
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 30px;
+}
+
+.mobile-link {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.mobile-link:hover {
+    color: var(--clr-gold);
+}
+
+
+/* Hero Sekce */
+.hero {
+    position: relative;
+    padding: 120px 0;
+    overflow: hidden;
+    background-color: var(--clr-bg-light);
+}
+
+.hero-bg-accent {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    right: 30px;
+    bottom: 0;
+    border-left: 1px solid rgba(192, 146, 74, 0.3);
+    border-right: 1px solid rgba(192, 146, 74, 0.3);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-layout {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    flex: 1.1;
+}
+
+.ornament-hero {
+    color: var(--clr-gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+}
+
+.hero-content h1 {
+    font-size: 3.8rem;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.15rem;
+    color: var(--clr-text-muted);
+    margin-bottom: 2.5rem;
+    max-width: 95%;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-image {
+    flex: 0.9;
+}
+
+.hero-simple-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    box-shadow: var(--shadow-regal);
+    border-radius: 4px;
+    border: 1px solid rgba(192, 146, 74, 0.4);
+}
+
+
+/* Příběh */
+.story-section {
+    padding: 120px 0;
+    background-color: #fff;
+    border-top: 1px solid rgba(192, 146, 74, 0.1);
+}
+
+.story-content {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+    margin-top: 60px;
+}
+
+.story-image {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.story-image:hover img {
+    transform: scale(1.02);
+}
+
+.img-sepia {
+    width: 100%;
+    display: block;
+    filter: sepia(0.4) grayscale(0.1) contrast(1.1);
+    border: 10px solid var(--clr-bg-light);
+    outline: 1px solid var(--clr-gold);
+    box-shadow: var(--shadow-regal);
+    transition: transform 0.8s ease;
+}
+
+.story-text {
+    flex: 1.2;
+}
+
+.story-text h3 {
+    font-size: 2.2rem;
+    color: var(--clr-gold-dim);
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.story-text p {
+    color: var(--clr-text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+
+/* Díla a Výroba */
+.showcase-section {
+    padding: 120px 0;
+}
+
+.border-top-ornate {
+    border-top: 1px dashed rgba(192, 146, 74, 0.3);
+}
+
+.regal-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.regal-card {
+    background-color: #fff;
+    border: 1px solid rgba(192, 146, 74, 0.2);
+    transition: var(--transition);
+}
+
+.regal-card:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--clr-gold);
+    transform: translateY(-8px);
+}
+
+.r-img-box {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+}
+
+.r-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+    filter: brightness(0.95) sepia(0.1);
+}
+
+.regal-card:hover .r-img-box img {
+    transform: scale(1.05);
+    filter: brightness(1) sepia(0);
+}
+
+.r-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to top, #fff, transparent);
+}
+
+.r-text-box {
+    padding: 0 30px 40px;
+    text-align: center;
+    position: relative;
+}
+
+.r-deco-top {
+    width: 40px;
+    height: 3px;
+    background-color: var(--clr-gold);
+    margin: 0 auto 20px;
+    transition: width 0.4s ease;
+}
+
+.regal-card:hover .r-deco-top {
+    width: 80px;
+}
+
+.r-text-box h4 {
+    font-size: 1.5rem;
+    color: var(--clr-text-main);
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.r-text-box p {
+    color: var(--clr-text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+/* Objednávka / Sekce zakázkového pečení */
+.order-section {
+    padding: 120px 0;
+    border-top: 1px dashed rgba(192, 146, 74, 0.3);
+}
+
+.highlight-bg {
+    background: linear-gradient(135deg, #fff 0%, rgb(250, 248, 245) 100%);
+}
+
+.badge-gold {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--clr-gold);
+    border: 1px solid var(--clr-gold);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.order-intro {
+    max-width: 900px;
+    margin: 0 auto 50px;
+}
+
+.lead-text {
+    font-size: 1.25rem;
+    color: var(--clr-text-muted);
+    line-height: 1.8;
+}
+
+.lead-text strong {
+    color: var(--clr-text-main);
+    font-weight: 500;
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 70px;
+}
+
+.service-box {
+    background: #fff;
+    border: 1px solid rgba(192, 146, 74, 0.2);
+    border-radius: var(--radius);
+    padding: 40px 30px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--clr-gold);
+}
+
+.s-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    filter: grayscale(0.5) sepia(1) hue-rotate(-30deg) saturate(2);
+}
+
+.service-box h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--clr-text-main);
+}
+
+.service-box p {
+    color: var(--clr-text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.contact-invitation {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--clr-bg-dark);
+    color: var(--clr-text-light);
+    border-radius: var(--radius);
+    position: relative;
+    padding: 4px;
+    /* Zlatý rámeček wrapper */
+    background: linear-gradient(135deg, var(--clr-gold), var(--clr-gold-dim), var(--clr-bg-dark));
+}
+
+.c-inv-inner {
+    background-color: var(--clr-bg-dark);
+    padding: 50px;
+    text-align: center;
+    border-radius: var(--radius);
+}
+
+.c-inv-inner h3 {
+    color: var(--clr-gold);
+    font-size: 2rem;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.c-inv-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.c-inv-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    color: var(--clr-text-light);
+    transition: transform 0.3s;
+}
+
+a.c-inv-item:hover {
+    color: var(--clr-gold);
+    transform: translateY(-3px);
+}
+
+.c-inv-icon {
+    font-size: 2.2rem;
+    filter: sepia(1);
+    margin-bottom: 10px;
+}
+
+.c-inv-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: #fff;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    margin-bottom: 5px;
+}
+
+a.c-inv-item:hover .c-inv-title {
+    color: var(--clr-gold);
+}
+
+.c-inv-subtitle {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.c-inv-divider {
+    width: 1px;
+    height: 80px;
+    background-color: rgba(192, 146, 74, 0.3);
+}
+
+
+/* Zážitek Galerie (Expresso Tmavě Hnědá) */
+.dark-realm {
+    background-color: var(--clr-bg-dark);
+    color: var(--clr-gold);
+    padding: 120px 0;
+    border-top: 3px double var(--clr-gold-dim);
+}
+
+.dark-realm h2 {
+    color: var(--clr-gold);
+    letter-spacing: 2px;
+}
+
+.dark-realm .divider-ornate span {
+    background-color: var(--clr-gold-light);
+    opacity: 0.8;
+}
+
+.gallery-grand {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 60px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.g-item {
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(192, 146, 74, 0.3);
+    position: relative;
+}
+
+.g-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: var(--clr-gold);
+    opacity: 0;
+    transition: opacity 0.5s;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+
+.g-item:hover::after {
+    opacity: 0.4;
+}
+
+.g-item.span-2 {
+    grid-column: span 2;
+    aspect-ratio: 21/9;
+}
+
+.g-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8) contrast(1.1);
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.g-item:hover .g-photo {
+    transform: scale(1.05);
+}
+
+
+/* Lightbox Zlatý */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 4000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 30, 22, 0.95);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.lightbox.active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-frame {
+    border: 10px solid var(--clr-bg-light);
+    outline: 2px solid var(--clr-gold);
+    max-width: 90%;
+    max-height: 90vh;
+    background-color: #fff;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    display: flex;
+    position: relative;
+}
+
+.lightbox-frame img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    color: var(--clr-gold);
+    font-size: 3rem;
+    cursor: pointer;
+    font-family: var(--font-body);
+    line-height: 1;
+    transition: transform 0.3s;
+}
+
+.close-lightbox:hover {
+    transform: scale(1.2);
+}
+
+
+/* Royal Footer (Espresso) */
+.royal-footer {
+    background-color: var(--clr-bg-dark);
+    color: #fff;
+    padding: 80px 0 40px;
+    position: relative;
+}
+
+.footer-top-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--clr-gold), transparent);
+}
+
+.footer-crest {
+    margin-bottom: 70px;
+}
+
+.footer-crest .logo-main {
+    color: var(--clr-gold);
+    font-size: 3rem;
+}
+
+.footer-crest p {
+    color: var(--clr-text-light);
+    font-family: var(--font-heading);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.footer-realm {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(192, 146, 74, 0.2);
+}
+
+.f-col h5 {
+    color: var(--clr-gold);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.f-col p {
+    color: var(--clr-text-light);
+    margin-bottom: 10px;
+}
+
+.f-link-block {
+    display: block;
+    color: var(--clr-text-light);
+    transition: var(--transition);
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+.f-link-block:hover {
+    color: var(--clr-gold);
+    transform: translateX(5px);
+}
+
+/* Hover Translate Effect */
+.f-link-gold {
+    display: inline-block;
+    color: var(--clr-gold);
+    border-bottom: 1px solid var(--clr-gold);
+    padding-bottom: 2px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.f-link-gold:hover {
+    color: #fff;
+    border-color: #fff;
+}
+
+.time-list .t-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    color: var(--clr-text-light);
+}
+
+.time-list .t-row.closed {
+    color: rgba(255, 255, 255, 0.4);
+    border-color: transparent;
+}
+
+.footer-bottom {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+.footer-bottom-muted {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Animace Elementů */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.in-view {
+    opacity: 1;
+    transform: translate(0);
+}
+
+.delay-1 {
+    transition-delay: 0.2s;
+}
+
+.delay-2 {
+    transition-delay: 0.4s;
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+
+    .nav-grp,
+    .top-bar-text {
+        display: none;
+    }
+
+    .top-bar-inner {
+        justify-content: center;
+    }
+
+    .menu-toggle-wrapper {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+    }
+
+    .nav-container {
+        display: flex;
+        padding: 0 10px;
+    }
+
+    .crest-box {
+        margin: 0;
+        flex: 1;
+    }
+
+    .hero {
+        padding: 80px 0;
+    }
+
+    .hero-layout {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        margin: 0 auto 2rem;
+    }
+
+    .hero-actions {
+        justify-content: center;
+        flex-direction: column;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .ornament-hero {
+        justify-content: center;
+    }
+
+    .hero-simple-img {
+        margin: 0 auto;
+        max-width: 500px;
+        display: block;
+    }
+
+    .story-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .img-sepia {
+        max-width: 500px;
+        margin: 0 auto;
+        border-width: 5px;
+    }
+
+    .story-text p {
+        text-align: justify;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .c-inv-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .c-inv-divider {
+        width: 100px;
+        height: 1px;
+    }
+
+    .c-inv-inner {
+        padding: 40px 20px;
+    }
+
+    .regal-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-width: 450px;
+        margin: 40px auto 0;
+    }
+
+    .gallery-grand {
+        grid-template-columns: 1fr;
+    }
+
+    .g-item.span-2 {
+        grid-column: span 1;
+        aspect-ratio: 16/10;
+    }
+
+    .footer-realm {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .f-link-block:hover {
+        transform: translateY(-3px);
+    }
+
+    /* Reset na mobilu */
+    .close-lightbox {
+        top: -50px;
+        right: 0;
+    }
+}
