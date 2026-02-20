@@ -17,6 +17,33 @@
 </head>
 
 <body>
+    <!-- RUSTIKÁLNÍ TEXTURY (SVG Filtry) -->
+    <svg style="width:0;height:0;position:absolute;z-index:-1;" aria-hidden="true" focusable="false">
+        <!-- 1. Hrubý papír / plátno -->
+        <filter id="rustic-texture">
+            <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.15 0" in="noise"
+                result="coloredNoise" />
+            <feBlend in="SourceGraphic" in2="coloredNoise" mode="multiply" />
+        </filter>
+        <!-- 2. Ražba (Letterpress) pro nadpisy a loga -->
+        <filter id="letterpress">
+            <feOffset dx="0" dy="1.5" in="SourceAlpha" result="shadowOffset" />
+            <feGaussianBlur stdDeviation="1" in="shadowOffset" result="shadowBlur" />
+            <feComponentTransfer in="shadowBlur" result="shadow">
+                <feFuncA type="linear" slope="0.8" />
+            </feComponentTransfer>
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="highlightOffset" />
+            <feGaussianBlur stdDeviation="1" in="highlightOffset" result="highlightBlur" />
+            <feComponentTransfer in="highlightBlur" result="highlight">
+                <feFuncA type="linear" slope="0.5" />
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode in="shadow" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+    </svg>
 
     <!-- Královský Plovoucí Widget (Zemité tóny) -->
     <div class="floating-contact">
@@ -167,7 +194,7 @@
 
             <div class="story-content">
                 <div class="story-image slide-up parallax-img">
-                    <img src="https://images.unsplash.com/photo-1495474472201-419b4b0e5ee5?q=80&w=1000&auto=format&fit=crop"
+                    <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=1000&auto=format&fit=crop"
                         class="img-sepia" alt="Malá cukrárna s kávou">
                 </div>
                 <div class="story-text slide-up delay-1">
@@ -221,7 +248,7 @@
                 <!-- Položka 2 -->
                 <div class="regal-card slide-up delay-1">
                     <div class="r-img-box">
-                        <img src="https://images.unsplash.com/photo-1579306079093-f111e1f14371?q=80&w=800&auto=format&fit=crop"
+                        <img src="https://images.unsplash.com/photo-1519340333755-56e9c1d04579?q=80&w=800&auto=format&fit=crop"
                             alt="Slavnostní a svatební výroba">
                     </div>
                     <div class="r-text-box">
@@ -237,7 +264,7 @@
                 <!-- Položka 3 -->
                 <div class="regal-card slide-up delay-2">
                     <div class="r-img-box">
-                        <img src="https://plus.unsplash.com/premium_photo-1673545518947-ddf3240090b1?q=80&w=800&auto=format&fit=crop"
+                        <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=800&auto=format&fit=crop"
                             alt="Káva a posezení">
                     </div>
                     <div class="r-text-box">
@@ -347,13 +374,13 @@
 
         <div class="gallery-grand slide-up delay-1">
             <div class="g-item"><img
-                    src="https://images.unsplash.com/photo-1548483861-55dbd7cfa7ca?q=80&w=800&auto=format&fit=crop"
+                    src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=800&auto=format&fit=crop"
                     class="g-photo" alt="Různé zákusky"></div>
             <div class="g-item"><img
-                    src="https://images.unsplash.com/photo-1627885406758-00d08ad6a25f?q=80&w=800&auto=format&fit=crop"
+                    src="https://images.unsplash.com/photo-1514056052883-d017fddd0426?q=80&w=800&auto=format&fit=crop"
                     class="g-photo" alt="Dezerty"></div>
             <div class="g-item span-2"><img
-                    src="https://images.unsplash.com/photo-1601397023190-252ca91398c7?q=80&w=1200&auto=format&fit=crop"
+                    src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?q=80&w=1200&auto=format&fit=crop"
                     class="g-photo" alt="Cukrářská práce"></div>
         </div>
     </section>
@@ -362,7 +389,8 @@
     <div class="lightbox" id="lightbox">
         <span class="close-lightbox" id="close-lightbox">&times;</span>
         <div class="lightbox-frame">
-            <img id="lightbox-img" src="" alt="Zvětšený náhled fotky">
+            <img id="lightbox-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                alt="Zvětšený náhled fotky">
         </div>
     </div>
 
