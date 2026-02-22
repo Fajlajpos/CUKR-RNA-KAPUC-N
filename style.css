@@ -48,7 +48,6 @@ body {
     background-image: linear-gradient(rgba(249, 246, 240, 0.75), rgba(249, 246, 240, 0.75)), url("https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=1600&auto=format&fit=crop");
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     color: var(--clr-text-main);
     font-family: var(--font-body);
     line-height: 1.7;
@@ -1338,12 +1337,14 @@ a.ec-item:hover .ec-value {
 .fade-in {
     opacity: 0;
     transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity;
 }
 
 .slide-up {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
 }
 
 .in-view {

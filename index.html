@@ -17,33 +17,6 @@
 </head>
 
 <body>
-    <!-- RUSTIKÁLNÍ TEXTURY (SVG Filtry) -->
-    <svg style="width:0;height:0;position:absolute;z-index:-1;" aria-hidden="true" focusable="false">
-        <!-- 1. Hrubý papír / plátno -->
-        <filter id="rustic-texture">
-            <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
-            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.15 0" in="noise"
-                result="coloredNoise" />
-            <feBlend in="SourceGraphic" in2="coloredNoise" mode="multiply" />
-        </filter>
-        <!-- 2. Ražba (Letterpress) pro nadpisy a loga -->
-        <filter id="letterpress">
-            <feOffset dx="0" dy="1.5" in="SourceAlpha" result="shadowOffset" />
-            <feGaussianBlur stdDeviation="1" in="shadowOffset" result="shadowBlur" />
-            <feComponentTransfer in="shadowBlur" result="shadow">
-                <feFuncA type="linear" slope="0.8" />
-            </feComponentTransfer>
-            <feOffset dx="0" dy="-1" in="SourceAlpha" result="highlightOffset" />
-            <feGaussianBlur stdDeviation="1" in="highlightOffset" result="highlightBlur" />
-            <feComponentTransfer in="highlightBlur" result="highlight">
-                <feFuncA type="linear" slope="0.5" />
-            </feComponentTransfer>
-            <feMerge>
-                <feMergeNode in="shadow" />
-                <feMergeNode in="SourceGraphic" />
-            </feMerge>
-        </filter>
-    </svg>
 
     <!-- Královský Plovoucí Widget (Zemité tóny) -->
     <div class="floating-contact">
