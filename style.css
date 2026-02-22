@@ -1240,19 +1240,43 @@ a:hover {
 }
 
 .review-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 30px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--clr-gold) rgba(192, 146, 74, 0.1);
+}
+
+.review-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.review-grid::-webkit-scrollbar-track {
+    background: rgba(192, 146, 74, 0.1);
+    border-radius: 4px;
+}
+
+.review-grid::-webkit-scrollbar-thumb {
+    background: var(--clr-gold);
+    border-radius: 4px;
 }
 
 .review-card {
     background: #fff;
     border: 1px solid rgba(192, 146, 74, 0.2);
     border-radius: var(--radius);
-    padding: 50px 40px;
+    padding: 35px 30px;
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+    flex: 0 0 320px;
+    /* Smaller fixed width */
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .review-card:hover {
@@ -1278,19 +1302,21 @@ a:hover {
 }
 
 .rev-text {
-    font-size: 1.15rem;
+    font-size: 1rem;
     color: var(--clr-text-muted);
-    line-height: 1.8;
-    margin-bottom: 30px;
+    line-height: 1.6;
+    margin-bottom: 25px;
     font-style: italic;
     position: relative;
     z-index: 1;
+    flex-grow: 1;
+    /* Pushes author to the bottom */
 }
 
 .rev-author {
     font-family: var(--font-heading);
     color: var(--clr-text-main);
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     letter-spacing: 1px;
 }
 
