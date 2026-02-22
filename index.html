@@ -76,7 +76,7 @@
 
             <div class="nav-links-desktop">
                 <a href="#rodokmen" class="nav-link" data-cs="Příběh" data-de="Geschichte">Příběh</a>
-                <a href="#dilo" class="nav-link" data-cs="Pečeme" data-de="Wir backen">Pečeme</a>
+                <a href="#hodnoceni" class="nav-link" data-cs="Hodnocení" data-de="Bewertungen">Hodnocení</a>
                 <a href="#zazitek" class="nav-link" data-cs="Galerie" data-de="Galerie">Galerie</a>
                 <a href="#objednavka" class="nav-link" data-cs="Zakázky" data-de="Aufträge">Zakázky</a>
             </div>
@@ -109,8 +109,8 @@
             <div class="fs-links">
                 <div class="fs-link-wrapper"><a href="#rodokmen" class="fs-link" data-cs="Náš Příběh"
                         data-de="Unsere Geschichte">Náš Příběh</a></div>
-                <div class="fs-link-wrapper"><a href="#dilo" class="fs-link" data-cs="Co Pečeme"
-                        data-de="Was wir backen">Co Pečeme</a></div>
+                <div class="fs-link-wrapper"><a href="#hodnoceni" class="fs-link" data-cs="Hodnocení"
+                        data-de="Bewertungen">Hodnocení</a></div>
                 <div class="fs-link-wrapper"><a href="#zazitek" class="fs-link" data-cs="Naše Práce"
                         data-de="Unsere Arbeit">Naše Práce</a></div>
                 <div class="fs-link-wrapper"><a href="#objednavka" class="fs-link" data-cs="Zakázkové Pečení"
@@ -130,80 +130,123 @@
         </div>
     </div>
 
-    <!-- Hero Sekce -->
-    <header class="hero" id="hero">
-        <div class="hero-bg-accent"></div>
-        <div class="container hero-layout">
-            <div class="hero-content fade-in">
-                <div class="ornament-hero">
-                    <svg width="60" height="20" viewBox="0 0 60 20" fill="none">
-                        <path d="M30 0L35 10L60 10L37 15L42 20L30 15L18 20L23 15L0 10L25 10L30 0Z"
-                            fill="currentColor" />
-                    </svg>
+    <!-- V4: Bento Grid Hero -->
+    <header class="hero-bento" id="hero">
+        <div class="container hero-bento-container">
+            <div class="bento-grid">
+                <!-- Main Promo Block -->
+                <div class="bento-item bento-main fade-in">
+                    <div class="bento-main-content">
+                        <div class="ornament-hero">
+                            <svg width="60" height="20" viewBox="0 0 60 20" fill="none">
+                                <path d="M30 0L35 10L60 10L37 15L42 20L30 15L18 20L23 15L0 10L25 10L30 0Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </div>
+                        <h1 data-cs="Vaše vysněné dorty s královskou péčí"
+                            data-de="Ihre Traumtorten mit königlicher Pflege">
+                            Vaše vysněné dorty<br>s královskou péčí
+                        </h1>
+                        <p data-cs="Ať už chystáte velkou svatbu, rodinnou oslavu nebo firemní večírek, v srdci Chebu pro vás denně pečeme ty nejlepší zákusky přesně podle vašich představ."
+                            data-de="Ob Sie eine große Hochzeit, Familienfeier oder Firmenfeier planen, im Herzen von Cheb backen wir täglich die besten Desserts genau nach Ihren Vorstellungen.">
+                            Ať už chystáte velkou svatbu, rodinnou oslavu nebo firemní večírek, v srdci Chebu pro vás
+                            denně pečeme ty nejlepší zákusky přesně podle vašich představ.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#objednavka" class="btn btn-gold" data-cs="Poptat Pečení"
+                                data-de="Backen anfragen">Poptat Pečení</a>
+                            <a href="#dilo" class="btn btn-outline-gold" data-cs="Naše Výroba"
+                                data-de="Unsere Produktion">Naše Výroba</a>
+                        </div>
+                    </div>
                 </div>
-                <h1 data-cs="Vaše vysněné dorty<br>s královskou péčí"
-                    data-de="Ihre Traumtorten<br>mit königlicher Pflege">Vaše vysněné dorty<br>s královskou péčí</h1>
-                <p data-cs="Ať už chystáte velkou svatbu, rodinnou oslavu nebo firemní večírek, v srdci Chebu pro vás denně pečeme ty nejlepší zákusky a dorty přesně podle vašich představ."
-                    data-de="Ob Sie eine große Hochzeit, Familienfeier oder Firmenfeier planen, im Herzen von Cheb backen wir täglich die besten Desserts und Torten genau nach Ihren Vorstellungen.">
-                    Ať už chystáte velkou svatbu, rodinnou oslavu nebo firemní večírek, v srdci Chebu pro vás denně
-                    pečeme ty nejlepší zákusky a dorty přesně podle vašich představ.</p>
 
-                <div class="hero-actions">
-                    <a href="#objednavka" class="btn btn-gold" data-cs="Poptat Zakázkové Pečení"
-                        data-de="Auftragsbacken anfragen">Poptat Zakázkové Pečení</a>
-                    <a href="#dilo" class="btn btn-outline-gold" data-cs="Naše Výroba" data-de="Unsere Produktion">Naše
-                        Výroba</a>
+                <!-- Wide Image Block -->
+                <div class="bento-item bento-img-wide fade-in delay-1">
+                    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1200&auto=format&fit=crop"
+                        alt="Sladkosti" class="bento-img">
                 </div>
-            </div>
 
-            <div class="hero-image fade-in delay-1">
-                <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1200&auto=format&fit=crop"
-                    class="hero-simple-img" alt="Zákusky Cukrárna Kapucín">
+                <!-- Small Stat Block -->
+                <div class="bento-item bento-stat fade-in delay-2">
+                    <div class="stat-content">
+                        <span class="stat-num">1991</span>
+                        <span class="stat-text" data-cs="Od roku" data-de="Seit">Od roku</span>
+                    </div>
+                </div>
+
+                <!-- Square Image Block -->
+                <div class="bento-item bento-img-square fade-in delay-2">
+                    <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?q=80&w=800&auto=format&fit=crop"
+                        alt="Příprava dortu" class="bento-img">
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Náš Rodokmen -->
-    <section class="story-section patterned" id="rodokmen">
-        <div class="container">
-            <div class="section-heading text-center slide-up">
-                <h2 data-cs="Vůně řemesla a tradice" data-de="Der Duft von Handwerk und Tradition">Vůně řemesla a
-                    tradice</h2>
-                <div class="divider-ornate">
-                    <span></span><svg width="20" height="20" viewBox="0 0 20 20">
-                        <path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8L10 0Z" fill="currentColor" />
-                    </svg><span></span>
+    <!-- V4: Sticky Scroll Story -->
+    <section class="story-sticky patterned" id="rodokmen">
+        <div class="container ss-container">
+            <!-- Left Fixed Image -->
+            <div class="ss-left fade-in">
+                <div class="ss-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=1000&auto=format&fit=crop"
+                        class="ss-img" alt="Řemeslná tradice">
+                    <div class="ss-badge">EST. 1991</div>
                 </div>
             </div>
 
-            <div class="story-content">
-                <div class="story-image slide-up parallax-img">
-                    <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=1000&auto=format&fit=crop"
-                        class="img-sepia" alt="Malá cukrárna s kávou">
+            <!-- Right Scrolling Content -->
+            <div class="ss-right">
+                <div class="ss-header slide-up">
+                    <h2 data-cs="Vůně řemesla a tradice" data-de="Der Duft von Handwerk und Tradition">Vůně řemesla a
+                        tradice</h2>
+                    <div class="divider-ornate">
+                        <span></span><svg width="20" height="20" viewBox="0 0 20 20">
+                            <path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8L10 0Z" fill="currentColor" />
+                        </svg><span></span>
+                    </div>
                 </div>
-                <div class="story-text slide-up delay-1">
+
+                <div class="ss-block slide-up">
+                    <span class="ss-chapter">01</span>
                     <h3 data-cs="Když tvoří rodinné ruce" data-de="Wenn Familienhände kreieren">Když tvoří rodinné ruce
                     </h3>
-                    <p data-cs="Už od roku 1991 je Cukrárna Kapucín ve městě Cheb pojmem pro ty, kteří si potrpí na to opravdové. Nekonáme ohromující zázraky z umělých krémů. Naše cesta je vůně másla, pravá ovocná chuť a domácí recepty."
-                        data-de="Seit 1991 ist die Konditorei Kapucín in der Stadt Cheb ein Begriff für alle, die das Echte schätzen. Wir vollbringen keine verblüffenden Wunder aus künstlichen Cremes. Unser Weg ist der Duft von Butter, echter Fruchtgeschmack und hausgemachte Rezepte.">
+                    <p data-cs="Už od roku 1991 je Cukrárna Kapucín ve městě Cheb pojmem pro ty, kteří si potrpí na to opravdové."
+                        data-de="Seit 1991 ist die Konditorei Kapucín in der Stadt Cheb ein Begriff für alle, die das Echte schätzen.">
                         Už od roku 1991 je Cukrárna Kapucín ve městě Cheb pojmem pro ty, kteří si potrpí na to
-                        opravdové. Nekonáme ohromující zázraky z umělých krémů. Naše cesta je vůně másla, pravá ovocná
-                        chuť a domácí recepty.</p>
-                    <p data-cs="Máme malý útulný prostor s několika stolky, kde si můžete dát šálek výběrové kávy a nechat starosti za dveřmi. Pro každého, kdo projde dveřmi naší cukrárny v Židovské ulici, jsme tu s úsměvem a láskou k řemeslu."
-                        data-de="Wir haben einen kleinen, gemütlichen Raum mit ein paar Tischen, wo Sie eine Tasse frisch gerösteten Kaffees genießen und Ihre Sorgen an der Tür lassen können. Für jeden, der durch die Tür unserer Konditorei in der Jüdischen Straße (Židovská) kommt, sind wir mit einem Lächeln und der Liebe zum Handwerk da.">
+                        opravdové.
+                    </p>
+                </div>
+
+                <div class="ss-block slide-up delay-1">
+                    <span class="ss-chapter">02</span>
+                    <h3 data-cs="Žádné zkratky" data-de="Keine Abkürzungen">Žádné zkratky</h3>
+                    <p data-cs="Nekonáme ohromující zázraky z umělých krémů. Naše cesta je vůně másla, pravá ovocná chuť a domácí recepty."
+                        data-de="Wir vollbringen keine verblüffenden Wunder aus künstlichen Cremes. Unser Weg ist der Duft von Butter, echter Fruchtgeschmack und hausgemachte Rezepte.">
+                        Nekonáme ohromující zázraky z umělých krémů. Naše cesta je vůně másla, pravá ovocná chuť a
+                        domácí recepty.
+                    </p>
+                </div>
+
+                <div class="ss-block slide-up delay-2">
+                    <span class="ss-chapter">03</span>
+                    <h3 data-cs="Vaše chvíle pohody" data-de="Ihr Moment des Wohlbefinden">Vaše chvíle pohody</h3>
+                    <p data-cs="Máme malý útulný prostor s několika stolky, kde si můžete dát šálek výběrové kávy a nechat starosti za dveřmi. Jsme tu s úsměvem a láskou k řemeslu."
+                        data-de="Wir haben einen kleinen, gemütlichen Raum mit ein paar Tischen, wo Sie eine Tasse frisch gerösteten Kaffees genießen und Ihre Sorgen an der Tür lassen können.">
                         Máme malý útulný prostor s několika stolky, kde si můžete dát šálek výběrové kávy a nechat
-                        starosti za dveřmi. Pro každého, kdo projde dveřmi naší cukrárny v Židovské ulici, jsme tu s
-                        úsměvem a láskou k řemeslu.</p>
+                        starosti za dveřmi. Jsme tu s úsměvem a láskou k řemeslu.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Cukrářské Dílo -->
-    <section class="showcase-section border-top-ornate" id="dilo">
-        <div class="container">
-            <div class="section-heading text-center slide-up">
-                <h2 data-cs="Dary z naší pece" data-de="Gaben aus unserem Ofen">Dary z naší pece</h2>
+    <!-- V5: Customer Reviews Section -->
+    <section class="reviews-section patterned" id="hodnoceni">
+        <div class="rev-container slide-up">
+            <div class="rev-heading">
+                <h2 data-cs="Napsali o nás" data-de="Was man über uns sagt">Napsali o nás</h2>
                 <div class="divider-ornate">
                     <span></span><svg width="20" height="20" viewBox="0 0 20 20">
                         <path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8L10 0Z" fill="currentColor" />
@@ -211,54 +254,41 @@
                 </div>
             </div>
 
-            <div class="regal-layout">
-                <!-- Položka 1 -->
-                <div class="regal-card slide-up">
-                    <div class="r-img-box">
-                        <img src="https://images.unsplash.com/photo-1542826438-bd32f43d626f?q=80&w=800&auto=format&fit=crop"
-                            alt="Dorty a dezerty">
-                        <div class="r-overlay"></div>
-                    </div>
-                    <div class="r-text-box">
-                        <div class="r-deco-top"></div>
-                        <h4 data-cs="Poctivé Zákusky" data-de="Ehrliche Desserts">Poctivé Zákusky</h4>
-                        <p data-cs="Řemeslně pečené drobné pochoutky, od ovocných koláčů, buchet a vánoček až po zákusky pro vaši každodenní chvíli pohody."
-                            data-de="Handwerklich gebackene kleine Leckereien, von Obstkuchen, Buchteln und Weihnachtsstollenzie bis hin zu Desserts für Ihren alltäglichen Moment des Wohlbefindens.">
-                            Řemeslně pečené drobné pochoutky, od ovocných koláčů, buchet a vánoček až po zákusky pro
-                            vaši každodenní chvíli pohody.</p>
-                    </div>
+            <div class="review-grid slide-up delay-1">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="rev-stars">★★★★★</div>
+                    <span class="rev-quote-icon">“</span>
+                    <p class="rev-text"
+                        data-cs="Nejlepší zákusky v Chebu a okolí! Vždy čerstvé, originální a hlavně s láskou dělané. Chodíme sem pravidelně a ještě nás nikdy nezklamali."
+                        data-de="Die besten Desserts in der Umgebung! Immer frisch, originell und mit Liebe gemacht. Wir kommen regelmäßig.">
+                        Nejlepší zákusky v Chebu a okolí! Vždy čerstvé, originální a hlavně s láskou dělané. Chodíme sem
+                        pravidelně a ještě nás nikdy nezklamali.</p>
+                    <div class="rev-author">— Jana K.</div>
                 </div>
 
-                <!-- Položka 2 -->
-                <div class="regal-card slide-up delay-1">
-                    <div class="r-img-box">
-                        <img src="https://images.unsplash.com/photo-1519340333755-56e9c1d04579?q=80&w=800&auto=format&fit=crop"
-                            alt="Slavnostní a svatební výroba">
-                    </div>
-                    <div class="r-text-box">
-                        <div class="r-deco-top"></div>
-                        <h4 data-cs="Hostiny na Míru" data-de="Maßgeschneiderte Festmähler">Hostiny na Míru</h4>
-                        <p data-cs="Specializujeme se na zakázkovou výrobu. Upečeme dort vašich představ přesně pro ten pravý okamžik s přáteli a rodinou."
-                            data-de="Wir sind auf Maßanfertigungen spezialisiert. Wir backen die Torte Ihrer Träume genau für den richtigen Moment mit Freunden und Familie.">
-                            Specializujeme se na zakázkovou výrobu. Upečeme dort vašich představ přesně pro ten pravý
-                            okamžik s přáteli a rodinou.</p>
-                    </div>
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="rev-stars">★★★★★</div>
+                    <span class="rev-quote-icon">“</span>
+                    <p class="rev-text"
+                        data-cs="Krásné a útulné prostředí, kde čas plyne tak nějak pomaleji. Skvělá káva, úžasný servis a cítíte tu tu pravou rodinnou tradici. Rozhodně doporučuji zastavení."
+                        data-de="Schöne und gemütliche Umgebung. Großartiger Kaffee und wunderbarer Service. Kann ich nur empfehlen.">
+                        Krásné a útulné prostředí, kde čas plyne tak nějak pomaleji. Skvělá káva, úžasný servis a cítíte
+                        tu tu pravou rodinnou tradici. Rozhodně doporučuji zastavení.</p>
+                    <div class="rev-author">— Martin D.</div>
                 </div>
 
-                <!-- Položka 3 -->
-                <div class="regal-card slide-up delay-2">
-                    <div class="r-img-box">
-                        <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=800&auto=format&fit=crop"
-                            alt="Káva a posezení">
-                    </div>
-                    <div class="r-text-box">
-                        <div class="r-deco-top"></div>
-                        <h4 data-cs="Osvěžení & Pohoda" data-de="Erfrischung & Wohlbefinden">Osvěžení & Pohoda</h4>
-                        <p data-cs="Vůně kávy je u nás doma rituálem. Nabízíme také osvěžující ledovou kávu, čerstvé džusy, naše domácí sirupy nebo drobné domácí delikatesy."
-                            data-de="Der Duft von Kaffee ist bei uns zu Hause ein Ritual. Wir bieten auch erfrischenden Eiskaffee, frische Säfte, unsere hausgemachten Sirupe oder kleine einheimische Delikatessen an.">
-                            Vůně kávy je u nás doma rituálem. Nabízíme také osvěžující ledovou kávu, čerstvé džusy, naše
-                            domácí sirupy nebo drobné domácí delikatesy.</p>
-                    </div>
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="rev-stars">★★★★★</div>
+                    <span class="rev-quote-icon">“</span>
+                    <p class="rev-text"
+                        data-cs="Dělali nám svatební dort a odvedli naprosto perfektní práci - vzhledově i chuťově vyvážený zázrak. Chtěla bych moc poděkovat celému týmu Cukrárny Kapucín!"
+                        data-de="Sie haben unsere Hochzeitstorte gemacht und absolut perfekte Arbeit geleistet. Vielen Dank an das gesamte Team!">
+                        Dělali nám svatební dort a odvedli naprosto perfektní práci - vzhledově i chuťově vyvážený
+                        zázrak. Chtěla bych moc poděkovat celému týmu Cukrárny Kapucín!</p>
+                    <div class="rev-author">— Markéta N.</div>
                 </div>
             </div>
         </div>
