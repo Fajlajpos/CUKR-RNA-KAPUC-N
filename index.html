@@ -48,28 +48,11 @@
             zkopírován.</span>
     </div>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container top-bar-inner">
-            <span class="top-bar-text" data-cs="Mistrovství a Cukrářská Tradice. Ze samého srdce Chebu od roku 1991."
-                data-de="Meisterschaft und Konditortradition. Aus dem Herzen von Cheb seit 1991.">Mistrovství a
-                Cukrářská Tradice. Ze samého srdce Chebu od roku 1991.</span>
-        </div>
-        <div class="top-bar-border"></div>
-    </div>
-
-    <!-- Hlavní Navigace -->
-    <nav id="navbar" class="royal-nav">
-        <div class="container nav-container">
-            <!-- Levá část menu -->
-            <div class="nav-grp nav-left">
-                <a href="#rodokmen" class="nav-link" data-cs="Náš Příběh" data-de="Unsere Geschichte">Náš Příběh</a>
-                <a href="#dilo" class="nav-link" data-cs="Co Pečeme" data-de="Was wir backen">Co Pečeme</a>
-            </div>
-
-            <!-- Střed - Dvorský Znak -->
-            <a href="#hero" class="logo">
-                <div class="crest-box">
+    <!-- Avant-Garde Floating Navigation -->
+    <nav id="navbar" class="floating-nav">
+        <div class="nav-glass-pill">
+            <a href="#hero" class="brand-logo">
+                <div class="crest-box crest-box-nav">
                     <svg class="flourish flourish-top" viewBox="0 0 100 20" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M50 10c-5-2-10-8-15-8s-10 6-15 6-10-6-15-6-5 2-5 8" stroke="currentColor"
@@ -79,7 +62,7 @@
                         <circle cx="50" cy="10" r="1.5" fill="currentColor" />
                     </svg>
                     <span class="crest-top" data-cs="Cukrárna" data-de="Konditorei">CUKRÁRNA</span>
-                    <span class="logo-main">KAPUCÍN</span>
+                    <span class="logo-main crest-main-nav">KAPUCÍN</span>
                     <svg class="flourish flourish-bottom" viewBox="0 0 100 20" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M50 10c-5-2-10-8-15-8s-10 6-15 6-10-6-15-6-5 2-5 8" stroke="currentColor"
@@ -91,45 +74,58 @@
                 </div>
             </a>
 
-            <!-- Pravá část menu -->
-            <div class="nav-grp nav-right">
-                <a href="#zazitek" class="nav-link" data-cs="Naše Práce" data-de="Unsere Arbeit">Naše Práce</a>
-                <a href="#objednavka" class="nav-link" data-cs="Zakázkové Pečení" data-de="Auftragsbacken">Zakázkové
-                    Pečení</a>
+            <div class="nav-links-desktop">
+                <a href="#rodokmen" class="nav-link" data-cs="Příběh" data-de="Geschichte">Příběh</a>
+                <a href="#dilo" class="nav-link" data-cs="Pečeme" data-de="Wir backen">Pečeme</a>
+                <a href="#zazitek" class="nav-link" data-cs="Galerie" data-de="Galerie">Galerie</a>
+                <a href="#objednavka" class="nav-link" data-cs="Zakázky" data-de="Aufträge">Zakázky</a>
+            </div>
 
-                <!-- ZVĚTŠENÝ Jazykový přepínač v hl. navigaci -->
-                <div class="lang-switch-nav">
+            <div class="nav-actions">
+                <div class="lang-switch-modern">
                     <button class="lang-btn active" onclick="setLanguage('cs')">CZ</button>
                     <button class="lang-btn" onclick="setLanguage('de')">DE</button>
                 </div>
-            </div>
-
-            <!-- Mobilní hamburger a lang v mobilu -->
-            <div class="menu-toggle-wrapper">
-                <button class="menu-toggle" id="mobile-menu-btn" aria-label="Menu">
-                    <span></span><span></span><span></span>
+                <!-- Menu Toggle Button (Minimalist Lines) -->
+                <button class="menu-toggle-modern" id="mobile-menu-btn" aria-label="Menu">
+                    <div class="line-wrap"><span class="line-top"></span></div>
+                    <div class="line-wrap"><span class="line-bottom"></span></div>
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- Mobilní menu overlay -->
-    <div class="mobile-nav-overlay" id="mobile-nav">
-        <div class="mobile-nav-header">
-            <span class="logo-main small">KAPUCÍN</span>
-            <button class="close-menu" id="close-menu-btn">&times;</button>
-        </div>
-        <div class="mobile-nav-links">
-            <a href="#rodokmen" class="mobile-link" data-cs="Náš Příběh" data-de="Unsere Geschichte">Náš Příběh</a>
-            <a href="#dilo" class="mobile-link" data-cs="Co Pečeme" data-de="Was wir backen">Co Pečeme</a>
-            <a href="#zazitek" class="mobile-link" data-cs="Naše Práce" data-de="Unsere Arbeit">Naše Práce</a>
-            <a href="#objednavka" class="mobile-link" data-cs="Zakázkové Pečení" data-de="Auftragsbacken">Zakázkové
-                Pečení</a>
+    <!-- Avant-Garde Fullscreen Overlay Menu -->
+    <div class="fullscreen-menu-overlay" id="mobile-nav">
+        <div class="fs-menu-bg"></div>
+        <div class="fs-menu-inner">
+            <div class="fs-header">
+                <span class="fs-logo">KAPUCÍN</span>
+                <button class="fs-close" id="close-menu-btn">
+                    <span>ZAVŘÍT</span>
+                </button>
+            </div>
 
-            <!-- V mobilu už jsou tlačítka velká -->
-            <div class="mobile-lang">
-                <button class="lang-btn active" onclick="setLanguage('cs')">CZ</button>
-                <button class="lang-btn" onclick="setLanguage('de')">DE</button>
+            <div class="fs-links">
+                <div class="fs-link-wrapper"><a href="#rodokmen" class="fs-link" data-cs="Náš Příběh"
+                        data-de="Unsere Geschichte">Náš Příběh</a></div>
+                <div class="fs-link-wrapper"><a href="#dilo" class="fs-link" data-cs="Co Pečeme"
+                        data-de="Was wir backen">Co Pečeme</a></div>
+                <div class="fs-link-wrapper"><a href="#zazitek" class="fs-link" data-cs="Naše Práce"
+                        data-de="Unsere Arbeit">Naše Práce</a></div>
+                <div class="fs-link-wrapper"><a href="#objednavka" class="fs-link" data-cs="Zakázkové Pečení"
+                        data-de="Auftragsbacken">Zakázkové Pečení</a></div>
+            </div>
+
+            <div class="fs-footer">
+                <div class="fs-contact">
+                    <a href="tel:+420354422893">+420 354 422 893</a>
+                    <a href="mailto:Romana.rathouska@seznam.cz">Romana.rathouska@seznam.cz</a>
+                </div>
+                <div class="fs-lang">
+                    <button class="lang-btn active" onclick="setLanguage('cs')">CZ</button>
+                    <button class="lang-btn" onclick="setLanguage('de')">DE</button>
+                </div>
             </div>
         </div>
     </div>
@@ -390,16 +386,55 @@
             </div>
         </div>
 
-        <div class="gallery-grand slide-up delay-1">
-            <div class="g-item"><img
-                    src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=800&auto=format&fit=crop"
-                    class="g-photo" alt="Různé zákusky"></div>
-            <div class="g-item"><img
-                    src="https://images.unsplash.com/photo-1514056052883-d017fddd0426?q=80&w=800&auto=format&fit=crop"
-                    class="g-photo" alt="Dezerty"></div>
-            <div class="g-item span-2"><img
-                    src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?q=80&w=1200&auto=format&fit=crop"
-                    class="g-photo" alt="Cukrářská práce"></div>
+        <div class="accordion-gallery slide-up delay-1">
+            <div class="accordion-item g-item">
+                <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1200&auto=format&fit=crop"
+                    class="accordion-img g-photo" alt="Různé zákusky">
+                <div class="accordion-content">
+                    <h3 data-cs="Sladké Umění" data-de="Süße Kunst">Sladké Umění</h3>
+                    <p data-cs="Každý kousek je originál." data-de="Jedes Stück ist ein Original.">Každý kousek je
+                        originál.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item g-item">
+                <img src="https://images.unsplash.com/photo-1514056052883-d017fddd0426?q=80&w=1200&auto=format&fit=crop"
+                    class="accordion-img g-photo" alt="Dezerty">
+                <div class="accordion-content">
+                    <h3 data-cs="Jemné Tóny" data-de="Sanfte Töne">Jemné Tóny</h3>
+                    <p data-cs="Lehkost a preciznost v jednom." data-de="Leichtigkeit und Präzision in einem.">Lehkost a
+                        preciznost v jednom.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item g-item">
+                <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?q=80&w=1200&auto=format&fit=crop"
+                    class="accordion-img g-photo" alt="Cukrářská práce">
+                <div class="accordion-content">
+                    <h3 data-cs="Poctivé Řemeslo" data-de="Ehrliches Handwerk">Poctivé Řemeslo</h3>
+                    <p data-cs="Jen ty nejlepší suroviny." data-de="Nur die besten Zutaten.">Jen ty nejlepší suroviny.
+                    </p>
+                </div>
+            </div>
+
+            <div class="accordion-item g-item">
+                <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?q=80&w=1200&auto=format&fit=crop"
+                    class="accordion-img g-photo" alt="Detaily zákusků">
+                <div class="accordion-content">
+                    <h3 data-cs="Dokonalý Detail" data-de="Perfektes Detail">Dokonalý Detail</h3>
+                    <p data-cs="Láska zakódovaná v chuti." data-de="Liebe im Geschmack kodiert.">Láska zakódovaná v
+                        chuti.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item g-item">
+                <img src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?q=80&w=1200&auto=format&fit=crop"
+                    class="accordion-img g-photo" alt="Svatební krása">
+                <div class="accordion-content">
+                    <h3 data-cs="Váš Den" data-de="Ihr Tag">Váš Den</h3>
+                    <p data-cs="Nezapomenutelné momenty." data-de="Unvergessliche Momenty.">Nezapomenutelné momenty.</p>
+                </div>
+            </div>
         </div>
     </section>
 

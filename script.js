@@ -24,11 +24,11 @@ function setLanguage(lang) {
     });
 }
 
-// ----- Mobilní menu -----
+// ----- Mobilní menu (Fullscreen Overlay) -----
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const closeMenuBtn = document.getElementById('close-menu-btn');
 const mobileNav = document.getElementById('mobile-nav');
-const mobileLinks = document.querySelectorAll('.mobile-link');
+const fsLinks = document.querySelectorAll('.fs-link');
 
 function toggleMobileMenu() {
     mobileNav.classList.toggle('active');
@@ -38,7 +38,7 @@ function toggleMobileMenu() {
 mobileMenuBtn.addEventListener('click', toggleMobileMenu);
 closeMenuBtn.addEventListener('click', toggleMobileMenu);
 
-mobileLinks.forEach(link => {
+fsLinks.forEach(link => {
     link.addEventListener('click', () => {
         mobileNav.classList.remove('active');
         document.body.style.overflow = '';
