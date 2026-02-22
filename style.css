@@ -1870,19 +1870,33 @@ a.ec-item:hover .ec-value {
 /* Responsive */
 @media (max-width: 992px) {
 
-    .nav-grp,
+    .nav-links-desktop,
     .top-bar-text {
         display: none;
     }
 
+    .menu-toggle-modern {
+        display: flex;
+    }
+
     .top-bar-inner {
         justify-content: center;
+        padding: 5px 0;
+    }
+
+    .fs-links {
+        gap: 15px;
+    }
+
+    .fs-link {
+        font-size: 1.5rem;
     }
 
     .menu-toggle-wrapper {
         display: flex;
         flex: 1;
         justify-content: flex-end;
+        align-items: center;
     }
 
     .nav-container {
@@ -1899,8 +1913,8 @@ a.ec-item:hover .ec-value {
     .hero-regal {
         min-height: 100vh;
         height: auto;
-        padding-top: 100px;
-        padding-bottom: 80px;
+        padding-top: 140px;
+        padding-bottom: 60px;
     }
 
     .pastry-sketch {
@@ -1908,58 +1922,76 @@ a.ec-item:hover .ec-value {
     }
 
     .ps-1 {
-        width: 80px;
-        height: 80px;
-        left: -5%;
+        width: 70px;
+        height: 70px;
+        left: -10%;
+        top: 15%;
     }
 
     .ps-2 {
-        width: 50px;
-        height: 50px;
-        left: 2%;
+        display: none;
+        /* Skryto pro čistší vzhled */
     }
 
     .ps-3 {
-        width: 90px;
-        height: 90px;
-        right: -5%;
+        width: 80px;
+        height: 80px;
+        right: -10%;
+        top: 20%;
     }
 
     .ps-4 {
-        width: 60px;
-        height: 60px;
-        right: 5%;
-        bottom: 10%;
+        display: none;
+        /* Skryto pro čistší vzhled */
     }
 
     .ps-5 {
         width: 50px;
         height: 50px;
-        left: 15%;
-        bottom: 5%;
+        left: 5%;
+        bottom: 10%;
+    }
+
+    .ps-6 {
+        display: none;
+        /* Skryto pro čistší vzhled */
+    }
+
+    .ps-8 {
+        width: 40px;
+        height: 40px;
+        right: 10%;
+        bottom: 15%;
     }
 
     .giant-logo-main {
-        font-size: 3.5rem;
-        letter-spacing: 5px;
+        font-size: clamp(2rem, 10vw, 2.5rem);
+        letter-spacing: 2px;
         text-align: center;
-        word-break: keep-all;
+        word-break: break-word;
+        /* Lepší pro mobily */
+        line-height: 1;
+        margin-top: 10px;
+        margin-bottom: 5px;
     }
 
     .giant-crest-top {
-        font-size: 1rem;
-        letter-spacing: 4px;
-        margin-top: 15px;
+        font-size: 0.85rem;
+        letter-spacing: 3px;
+        margin-top: 10px;
+        display: block;
+        /* Ujistíme se, že nepředbíhá */
     }
 
     .giant-flourish {
-        width: 100px;
+        width: 70px;
+        /* Zmenšené vlnovky */
     }
 
     .regal-tagline {
-        font-size: 0.95rem;
-        letter-spacing: 2px;
-        line-height: 1.6;
+        font-size: 0.85rem;
+        letter-spacing: 1.5px;
+        line-height: 1.5;
     }
 
     .btn-large {
@@ -1974,8 +2006,8 @@ a.ec-item:hover .ec-value {
     /* V4: Sticky Scroll Story Mobile */
     .ss-container {
         flex-direction: column;
-        gap: 40px;
-        padding: 60px 15px;
+        gap: 30px;
+        padding: 50px 15px;
     }
 
     .ss-left {
@@ -1985,7 +2017,8 @@ a.ec-item:hover .ec-value {
     }
 
     .ss-img-wrapper {
-        max-height: 400px;
+        max-height: 350px;
+        border-radius: var(--radius);
     }
 
     .ss-right {
@@ -1998,7 +2031,7 @@ a.ec-item:hover .ec-value {
     }
 
     .ss-header h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .divider-ornate {
@@ -2006,7 +2039,7 @@ a.ec-item:hover .ec-value {
     }
 
     .ss-block {
-        margin-bottom: 60px;
+        margin-bottom: 50px;
         padding-left: 20px;
     }
 
@@ -2016,12 +2049,12 @@ a.ec-item:hover .ec-value {
         top: 0;
         display: inline-block;
         margin-bottom: 10px;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         padding: 0;
     }
 
     .ss-block h3 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     /* V5: Customer Reviews Mobile */
@@ -2034,22 +2067,28 @@ a.ec-item:hover .ec-value {
     }
 
     .review-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 15px;
+        padding-bottom: 20px;
     }
 
     .review-card {
-        padding: 40px 25px;
+        padding: 20px 15px;
+        flex: 0 0 260px;
     }
 
     .rev-quote-icon {
-        font-size: 5rem;
-        top: 20px;
-        right: 20px;
+        font-size: 4rem;
+        top: 15px;
+        right: 15px;
     }
 
     .rev-text {
-        font-size: 1.05rem;
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+
+    .rev-author {
+        font-size: 1rem;
     }
 
     .services-grid {
@@ -2057,15 +2096,20 @@ a.ec-item:hover .ec-value {
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
+        gap: 20px;
+    }
+
+    .service-box {
+        padding: 30px 20px;
     }
 
     .contact-showcase {
-        margin: 40px 15px 0;
+        margin: 30px 15px 0;
     }
 
     .ec-grid {
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
     }
 
     .ec-divider {
@@ -2074,7 +2118,11 @@ a.ec-item:hover .ec-value {
     }
 
     .ec-inner {
-        padding: 40px 20px;
+        padding: 40px 15px;
+    }
+
+    .ec-inner h3 {
+        font-size: 1.8rem;
     }
 
     .regal-layout {
@@ -2093,13 +2141,14 @@ a.ec-item:hover .ec-value {
     }
 
     .accordion-item {
-        height: 120px;
+        height: 100px;
         flex: none;
         /* No flex grow on mobile */
     }
 
-    .accordion-item:hover {
-        height: 350px;
+    .accordion-item:hover,
+    .accordion-item:active {
+        height: 250px;
         flex: none;
     }
 
@@ -2148,6 +2197,14 @@ a.ec-item:hover .ec-value {
         transform: translateY(-3px);
     }
 
+    /* Zmenšení plovoucích tlačítek na mobilu */
+    .floating-contact {
+        bottom: 15px;
+        right: 15px;
+        transform: scale(0.85);
+        transform-origin: bottom right;
+    }
+
     /* Reset na mobilu */
     .close-lightbox {
         top: -50px;
@@ -2162,6 +2219,11 @@ a.ec-item:hover .ec-value {
     }
 
     .hero-content h1 {
+        font-size: 1.8rem;
+        /* Smaller for very small devices */
+    }
+
+    .giant-logo-main {
         font-size: 2rem;
     }
 
@@ -2177,7 +2239,7 @@ a.ec-item:hover .ec-value {
     }
 
     .ec-item {
-        gap: 10px;
+        gap: 8px;
     }
 
     .ec-value {
@@ -2185,11 +2247,15 @@ a.ec-item:hover .ec-value {
     }
 
     .service-box {
-        padding: 30px 20px;
+        padding: 20px 15px;
+    }
+
+    .ss-img-wrapper {
+        max-height: 220px;
     }
 
     .r-img-box {
-        height: 220px;
+        height: 180px;
     }
 
     .crest-box-footer .logo-main {
