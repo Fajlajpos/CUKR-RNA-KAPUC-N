@@ -130,58 +130,100 @@
         </div>
     </div>
 
-    <!-- V4: Bento Grid Hero -->
-    <header class="hero-bento" id="hero">
-        <div class="container hero-bento-container">
-            <div class="bento-grid">
-                <!-- Main Promo Block -->
-                <div class="bento-item bento-main fade-in">
-                    <div class="bento-main-content">
-                        <div class="ornament-hero">
-                            <svg width="60" height="20" viewBox="0 0 60 20" fill="none">
-                                <path d="M30 0L35 10L60 10L37 15L42 20L30 15L18 20L23 15L0 10L25 10L30 0Z"
-                                    fill="currentColor" />
-                            </svg>
-                        </div>
-                        <h1 data-cs="Vaše vysněné dorty s královskou péčí"
-                            data-de="Ihre Traumtorten mit königlicher Pflege">
-                            Vaše vysněné dorty<br>s královskou péčí
-                        </h1>
-                        <p data-cs="Ať už chystáte velkou svatbu, rodinnou oslavu nebo firemní večírek, v srdci Chebu pro vás denně pečeme ty nejlepší zákusky přesně podle vašich představ."
-                            data-de="Ob Sie eine große Hochzeit, Familienfeier oder Firmenfeier planen, im Herzen von Cheb backen wir täglich die besten Desserts genau nach Ihren Vorstellungen.">
-                            Ať už chystáte velkou svatbu, rodinnou oslavu nebo firemní večírek, v srdci Chebu pro vás
-                            denně pečeme ty nejlepší zákusky přesně podle vašich představ.
-                        </p>
-                        <div class="hero-actions">
-                            <a href="#objednavka" class="btn btn-gold" data-cs="Poptat Pečení"
-                                data-de="Backen anfragen">Poptat Pečení</a>
-                            <a href="#dilo" class="btn btn-outline-gold" data-cs="Naše Výroba"
-                                data-de="Unsere Produktion">Naše Výroba</a>
-                        </div>
-                    </div>
+    <!-- V5: Regal Light Hero without Photos -->
+    <header class="hero-regal" id="hero">
+        <!-- Delicate Golden Grid Lines and abstract watermark -->
+        <div class="regal-bg-deco">
+            <div class="regal-grid-line gl-top"></div>
+            <div class="regal-grid-line gl-bottom"></div>
+            <div class="regal-grid-line gl-left"></div>
+            <div class="regal-grid-line gl-right"></div>
+
+            <!-- Floating Pastry Sketches (Outlines) -->
+            <div class="pastry-sketch ps-1">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
+                    <path d="M12 2v20"></path>
+                    <path d="M2 12h20"></path>
+                    <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+                </svg>
+            </div>
+            <div class="pastry-sketch ps-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                        d="M12 21a9 9 0 1 1 0-18c1.66 0 3 1.34 3 3v6a3 3 0 0 1-3 3h-3a3 3 0 0 0-3 3v0c0 1.66 1.34 3 3 3z">
+                    </path>
+                </svg>
+            </div>
+            <div class="pastry-sketch ps-3">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M6 3h12l4 9H2L6 3Z"></path>
+                    <path d="M10 21V12"></path>
+                    <path d="M14 21V12"></path>
+                    <path d="M2 12v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-9"></path>
+                </svg>
+            </div>
+            <div class="pastry-sketch ps-4">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M7 11v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-8M5 11h14M8 11V7a4 4 0 0 1 8 0v4M12 7v4"></path>
+                </svg>
+            </div>
+            <div class="pastry-sketch ps-5">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M3 11h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <path d="M3 11a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5"></path>
+                    <path d="M12 2v4"></path>
+                    <path d="M8 3v3"></path>
+                    <path d="M16 3v3"></path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="container hero-regal-container">
+            <div class="regal-content fade-in">
+                <!-- Massive Center Logo -->
+                <div class="giant-logo-wrap">
+                    <svg class="giant-flourish" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M100 20C80 15 60 5 40 5 20 5 0 15 0 15M100 20C120 15 140 5 160 5 180 5 200 15 200 15"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                        <circle cx="100" cy="20" r="3" fill="currentColor" />
+                    </svg>
+
+                    <div class="giant-crest-top" data-cs="Cukrárna" data-de="Konditorei">CUKRÁRNA</div>
+                    <h1 class="giant-logo-main">KAPUCÍN</h1>
+
+                    <svg class="giant-flourish" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M100 20C80 25 60 35 40 35 20 35 0 25 0 25M100 20C120 25 140 35 160 35 180 35 200 25 200 25"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                        <circle cx="100" cy="20" r="3" fill="currentColor" />
+                    </svg>
                 </div>
 
-                <!-- Wide Image Block -->
-                <div class="bento-item bento-img-wide fade-in delay-1">
-                    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1200&auto=format&fit=crop"
-                        alt="Sladkosti" class="bento-img">
+                <div class="regal-tagline-wrap slide-up delay-1">
+                    <p class="regal-tagline" data-cs="Vaše vysněné dorty s královskou péčí od roku 1991"
+                        data-de="Ihre Traumtorten mit königlicher Pflege seit 1991">
+                        Vaše vysněné dorty s královskou péčí od roku 1991
+                    </p>
                 </div>
 
-                <!-- Small Stat Block -->
-                <div class="bento-item bento-stat fade-in delay-2">
-                    <div class="stat-content">
-                        <span class="stat-num">1991</span>
-                        <span class="stat-text" data-cs="Od roku" data-de="Seit">Od roku</span>
-                    </div>
-                </div>
-
-                <!-- Square Image Block -->
-                <div class="bento-item bento-img-square fade-in delay-2">
-                    <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?q=80&w=800&auto=format&fit=crop"
-                        alt="Příprava dortu" class="bento-img">
+                <div class="regal-actions slide-up delay-2">
+                    <a href="#objednavka" class="btn btn-gold btn-large" data-cs="Poptat Pečení"
+                        data-de="Backen anfragen">Poptat Pečení</a>
                 </div>
             </div>
         </div>
+
+        <!-- Scroll Indicator -->
+        <a href="#rodokmen" class="scroll-indicator-wrap" aria-label="Scroll down">
+            <span class="scroll-text" data-cs="Objevit" data-de="Entdecken">Objevit</span>
+            <div class="scroll-line"></div>
+        </a>
     </header>
 
     <!-- V4: Sticky Scroll Story -->
