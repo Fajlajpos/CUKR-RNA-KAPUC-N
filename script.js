@@ -113,27 +113,75 @@ window.addEventListener('load', handleScroll); // Inicialní check po načtení
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const closeLightbox = document.getElementById('close-lightbox');
-const galleryItems = document.querySelectorAll('.g-item');
+const lightboxCounter = document.getElementById('lightbox-counter');
+const lbPrev = document.getElementById('lb-prev');
+const lbNext = document.getElementById('lb-next');
 
-galleryItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const imgSrc = item.querySelector('img').src;
-        // Načteme zdroj fotky bez limitu šířky Unsplash parametru (nebo jen zobrazíme plnou)
-        lightboxImg.src = imgSrc;
+const galleryImages = document.querySelectorAll('.bento-img');
+let currentImageIndex = 0;
+
+function updateLightboxImage(index) {
+    // Plynulý přechod mizející fotky
+    lightboxImg.classList.add('fade-out');
+
+    setTimeout(() => {
+        lightboxImg.src = galleryImages[index].src;
+        lightboxCounter.innerText = `${index + 1} / ${galleryImages.length}`;
+        currentImageIndex = index;
+
+        lightboxImg.onload = () => {
+            lightboxImg.classList.remove('fade-out');
+        };
+    }, 150);
+}
+
+galleryImages.forEach((img, index) => {
+    img.closest('.bento-item').addEventListener('click', () => {
+        lightboxImg.classList.remove('fade-out');
+        lightboxImg.src = img.src;
+        currentImageIndex = index;
+
+        lightboxCounter.innerText = `${index + 1} / ${galleryImages.length}`;
+
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
     });
 });
 
-closeLightbox.addEventListener('click', () => {
+function closeLightboxHandler() {
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
-});
+}
+
+closeLightbox.addEventListener('click', closeLightboxHandler);
 
 // Zavření lightboxu při kliknutí kamkoliv mimo fotku
 lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox || e.target.classList.contains('lightbox-frame')) {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = '';
+        closeLightboxHandler();
     }
+});
+
+// Navigace šipkami v HTML
+lbPrev.addEventListener('click', (e) => {
+    e.stopPropagation();
+    let newIndex = currentImageIndex - 1;
+    if (newIndex < 0) newIndex = galleryImages.length - 1;
+    updateLightboxImage(newIndex);
+});
+
+lbNext.addEventListener('click', (e) => {
+    e.stopPropagation();
+    let newIndex = currentImageIndex + 1;
+    if (newIndex >= galleryImages.length) newIndex = 0;
+    updateLightboxImage(newIndex);
+});
+
+// Navigace klávesnicí
+document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+
+    if (e.key === 'Escape') closeLightboxHandler();
+    if (e.key === 'ArrowLeft') lbPrev.click();
+    if (e.key === 'ArrowRight') lbNext.click();
 });

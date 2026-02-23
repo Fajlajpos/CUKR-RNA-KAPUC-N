@@ -39,6 +39,7 @@
 
 html {
     scroll-behavior: smooth;
+    /* overflow-x: hidden; breaks position: sticky down the line */
 }
 
 body {
@@ -54,6 +55,11 @@ body {
     font-size: 16px;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
+}
+
+/* Klička pro zabránění horizontálnímu scrollu bez rozbití pozice sticky: aplikovat na wrapper vrstvu */
+.page-wrapper {
+    width: 100%;
 }
 
 /* Base Typografie */
@@ -1602,96 +1608,86 @@ a.ec-item:hover .ec-value {
     opacity: 0.8;
 }
 
-/* Avant-Garde Zážitek Galerie: Interactive Accordion */
-.accordion-gallery {
-    display: flex;
+/* Elegantní 5x2 Galerie (Zakomponovaný Kapucin Styl) */
+.bento-gallery-wrapper {
+    width: 100%;
+    padding: 20px 0 80px 0;
+}
+
+.bento-gallery {
+    display: grid;
+    /* 5 sloupců pro 10 fotek = 2 řádky */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    /* Mírně větší elegantnější mezery (ne natlačené jako iOS) */
     width: 100%;
     max-width: 1200px;
-    height: 600px;
-    margin: 60px auto 0;
-    gap: 10px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-.accordion-item {
+.bento-item {
     position: relative;
-    flex: 1;
-    overflow: hidden;
     border-radius: var(--radius);
-    transition: flex 0.6s cubic-bezier(0.8, 0, 0.2, 1);
+    /* Udržíme jemné zakulacení zbytku webu */
+    overflow: hidden;
     cursor: pointer;
+    background-color: var(--clr-bg-dark);
+    /* Kapucin design: Jemný zlatavý okraj a elegantnější stín (rámeček) */
+    border: 1px solid rgba(192, 146, 74, 0.25);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease, border-color 0.5s ease;
+    aspect-ratio: 1 / 1;
+    /* Vynutí čisté čtverce */
 }
 
-.accordion-item::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(15, 10, 8, 0.9) 0%, rgba(15, 10, 8, 0.2) 50%, transparent 100%);
-    z-index: 1;
-    opacity: 0.8;
-    transition: opacity 0.6s;
-}
-
-.accordion-item:hover {
-    flex: 5;
-}
-
-.accordion-item:hover::before {
-    opacity: 0.6;
-}
-
-.accordion-img {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: auto;
+.bento-img {
+    width: 100%;
     height: 100%;
-    min-width: 100%;
     object-fit: cover;
-    filter: sepia(0.4) brightness(0.6) contrast(1.2);
-    transition: filter 0.6s, transform 0.6s cubic-bezier(0.8, 0, 0.2, 1);
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.accordion-item:hover .accordion-img {
-    filter: sepia(0) brightness(1) contrast(1.1);
-    transform: translateX(-50%) scale(1.05);
-}
-
-.accordion-content {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    right: 30px;
+/* Hover: Rámeček se pozvedne, fotka elegantně "nadýchne" a okraj zezlátne */
+.bento-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(22, 17, 12, 0.4);
+    border-color: var(--clr-gold);
     z-index: 2;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s 0.2s, transform 0.4s 0.2s;
-    pointer-events: none;
 }
 
-.accordion-item:hover .accordion-content {
-    opacity: 1;
-    transform: translateY(0);
+.bento-item:hover .bento-img {
+    transform: scale(1.06);
 }
 
-.accordion-content h3 {
-    font-family: var(--font-heading);
-    color: var(--clr-gold);
-    font-size: 1.8rem;
-    margin-bottom: 5px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+/* --- Responzivita --- */
+
+/* Tablet (cca do 900px) */
+@media (max-width: 900px) {
+    .bento-gallery {
+        /* Na tabletu 4 sloupce nebo 3 */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
 }
 
-.accordion-content p {
-    color: var(--clr-text-light);
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    opacity: 0.9;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+/* Mobily (cca do 600px) */
+@media (max-width: 600px) {
+    .bento-gallery-wrapper {
+        padding: 40px 0;
+    }
+
+    .bento-gallery {
+        /* Na mobilu 2 sloupce */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+        /* Velmi úzké mezery na mobilu */
+        padding: 0 10px;
+    }
 }
 
-
-/* Lightbox Zlatý */
+/* Zlatý Lightbox s navigací */
 .lightbox {
     display: none;
     position: fixed;
@@ -1700,7 +1696,9 @@ a.ec-item:hover .ec-value {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(43, 30, 22, 0.95);
+    background-color: rgba(20, 14, 10, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     justify-content: center;
     align-items: center;
     opacity: 0;
@@ -1712,37 +1710,126 @@ a.ec-item:hover .ec-value {
     opacity: 1;
 }
 
-.lightbox-frame {
-    border: 10px solid var(--clr-bg-light);
-    outline: 2px solid var(--clr-gold);
-    max-width: 90%;
-    max-height: 90vh;
-    background-color: #fff;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+.lightbox-controls {
+    position: absolute;
+    top: 30px;
+    right: 40px;
     display: flex;
+    align-items: center;
+    gap: 30px;
+    z-index: 4010;
+}
+
+.lightbox-counter {
+    color: var(--clr-gold);
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+}
+
+.close-lightbox {
+    color: var(--clr-gold);
+    font-size: 4rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.close-lightbox:hover {
+    transform: scale(1.1);
+    color: var(--clr-text-light);
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(43, 30, 22, 0.4);
+    border: 1px solid rgba(192, 146, 74, 0.4);
+    color: var(--clr-gold);
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 4010;
+}
+
+.lightbox-nav:hover {
+    background: var(--clr-gold);
+    color: var(--clr-bg-dark);
+    transform: translateY(-50%) scale(1.1);
+    border-color: var(--clr-gold);
+}
+
+.lightbox-nav svg {
+    width: 35px;
+    height: 35px;
+}
+
+.lb-prev {
+    left: 40px;
+}
+
+.lb-next {
+    right: 40px;
+}
+
+.lightbox-frame {
     position: relative;
+    max-width: 80%;
+    max-height: 85vh;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    border: 8px solid var(--clr-bg-light);
+    outline: 2px solid var(--clr-gold);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .lightbox-frame img {
     max-width: 100%;
-    max-height: 85vh;
+    max-height: 80vh;
+    display: block;
     object-fit: contain;
+    transition: opacity 0.3s ease;
 }
 
-.close-lightbox {
-    position: absolute;
-    top: -40px;
-    right: -40px;
-    color: var(--clr-gold);
-    font-size: 3rem;
-    cursor: pointer;
-    font-family: var(--font-body);
-    line-height: 1;
-    transition: transform 0.3s;
+.lightbox-frame img.fade-out {
+    opacity: 0;
 }
 
-.close-lightbox:hover {
-    transform: scale(1.2);
+@media (max-width: 768px) {
+    .lb-prev {
+        left: 15px;
+    }
+
+    .lb-next {
+        right: 15px;
+    }
+
+    .lightbox-nav {
+        width: 50px;
+        height: 50px;
+    }
+
+    .lightbox-frame {
+        max-width: 95%;
+        border-width: 4px;
+    }
+
+    .lightbox-controls {
+        top: 20px;
+        right: 20px;
+        gap: 20px;
+    }
+
+    .close-lightbox {
+        font-size: 3rem;
+    }
 }
 
 

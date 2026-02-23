@@ -17,297 +17,349 @@
 </head>
 
 <body>
-
-    <!-- Královský Plovoucí Widget (Zemité tóny) -->
-    <div class="floating-contact">
-        <!-- Zkopíruje email -->
-        <button class="contact-btn" id="copy-email-btn" aria-label="Kopírovat e-mail"
-            data-email="Romana.rathouska@seznam.cz">
-            <svg viewBox="0 0 24 24" fill="none" class="contact-icon" stroke="currentColor" stroke-width="1.5">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
-            <span class="contact-tooltip" data-cs="Napsat nám" data-de="Nachricht schreiben">Napsat nám</span>
-            <div class="btn-border-glow"></div>
-        </button>
-        <!-- Rovnou volá -->
-        <a href="tel:+420354422893" class="contact-btn" aria-label="Zavolat">
-            <svg viewBox="0 0 24 24" fill="none" class="contact-icon" stroke="currentColor" stroke-width="1.5">
-                <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                </path>
-            </svg>
-            <span class="contact-tooltip" data-cs="Hovořit s námi" data-de="Mit uns sprechen">Hovořit s námi</span>
-            <div class="btn-border-glow"></div>
-        </a>
-    </div>
-
-    <!-- Notifikace o zkopírování -->
-    <div id="toast" class="toast">
-        <span data-cs="E-mail úspěšně zkopírován." data-de="E-Mail erfolgreich kopiert.">E-mail úspěšně
-            zkopírován.</span>
-    </div>
-
-    <!-- Avant-Garde Floating Navigation -->
-    <nav id="navbar" class="floating-nav">
-        <div class="nav-glass-pill">
-            <a href="#hero" class="brand-logo">
-                <div class="crest-box crest-box-nav">
-                    <svg class="flourish flourish-top" viewBox="0 0 100 20" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M50 10c-5-2-10-8-15-8s-10 6-15 6-10-6-15-6-5 2-5 8" stroke="currentColor"
-                            stroke-width="1.2" stroke-linecap="round" />
-                        <path d="M50 10c5-2 10-8 15-8s10 6 15 6 10-6 15-6 5 2 5 8" stroke="currentColor"
-                            stroke-width="1.2" stroke-linecap="round" />
-                        <circle cx="50" cy="10" r="1.5" fill="currentColor" />
-                    </svg>
-                    <span class="crest-top" data-cs="Cukrárna" data-de="Konditorei">CUKRÁRNA</span>
-                    <span class="logo-main crest-main-nav">KAPUCÍN</span>
-                    <svg class="flourish flourish-bottom" viewBox="0 0 100 20" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M50 10c-5-2-10-8-15-8s-10 6-15 6-10-6-15-6-5 2-5 8" stroke="currentColor"
-                            stroke-width="1.2" stroke-linecap="round" />
-                        <path d="M50 10c5-2 10-8 15-8s10 6 15 6 10-6 15-6 5 2 5 8" stroke="currentColor"
-                            stroke-width="1.2" stroke-linecap="round" />
-                        <circle cx="50" cy="10" r="1.5" fill="currentColor" />
-                    </svg>
-                </div>
+    <div class="page-wrapper">
+        <!-- Královský Plovoucí Widget (Zemité tóny) -->
+        <div class="floating-contact">
+            <!-- Zkopíruje email -->
+            <button class="contact-btn" id="copy-email-btn" aria-label="Kopírovat e-mail"
+                data-email="Romana.rathouska@seznam.cz">
+                <svg viewBox="0 0 24 24" fill="none" class="contact-icon" stroke="currentColor" stroke-width="1.5">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span class="contact-tooltip" data-cs="Napsat nám" data-de="Nachricht schreiben">Napsat nám</span>
+                <div class="btn-border-glow"></div>
+            </button>
+            <!-- Rovnou volá -->
+            <a href="tel:+420354422893" class="contact-btn" aria-label="Zavolat">
+                <svg viewBox="0 0 24 24" fill="none" class="contact-icon" stroke="currentColor" stroke-width="1.5">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                </svg>
+                <span class="contact-tooltip" data-cs="Hovořit s námi" data-de="Mit uns sprechen">Hovořit s námi</span>
+                <div class="btn-border-glow"></div>
             </a>
-
-            <div class="nav-links-desktop">
-                <a href="#rodokmen" class="nav-link" data-cs="Příběh" data-de="Geschichte">Příběh</a>
-                <a href="#zazitek" class="nav-link" data-cs="Galerie" data-de="Galerie">Galerie</a>
-                <a href="#objednavka" class="nav-link" data-cs="Zakázky" data-de="Aufträge">Zakázky</a>
-                <a href="#hodnoceni" class="nav-link" data-cs="Hodnocení" data-de="Bewertungen">Hodnocení</a>
-            </div>
-
-            <div class="nav-actions">
-                <div class="lang-switch-modern">
-                    <button class="lang-btn active" onclick="setLanguage('cs')">CZ</button>
-                    <button class="lang-btn" onclick="setLanguage('de')">DE</button>
-                </div>
-                <!-- Menu Toggle Button (Minimalist Lines) -->
-                <button class="menu-toggle-modern" id="mobile-menu-btn" aria-label="Menu">
-                    <div class="line-wrap"><span class="line-top"></span></div>
-                    <div class="line-wrap"><span class="line-bottom"></span></div>
-                </button>
-            </div>
         </div>
-    </nav>
 
-    <!-- Avant-Garde Fullscreen Overlay Menu -->
-    <div class="fullscreen-menu-overlay" id="mobile-nav">
-        <div class="fs-menu-bg"></div>
-        <div class="fs-menu-inner">
-            <div class="fs-header">
-                <div class="crest-box crest-box-nav" style="transform: scale(0.9);">
-                    <span class="crest-top">CUKRÁRNA</span>
-                    <span class="crest-main-nav" style="color: var(--clr-gold);">KAPUCÍN</span>
-                </div>
-                <button class="fs-close" id="close-menu-btn">
-                    <span>ZAVŘÍT</span>
-                </button>
-            </div>
-
-            <div class="fs-links">
-                <div class="fs-link-wrapper"><a href="#rodokmen" class="fs-link" data-cs="Náš Příběh"
-                        data-de="Unsere Geschichte">Náš Příběh</a></div>
-                <div class="fs-link-wrapper"><a href="#zazitek" class="fs-link" data-cs="Naše Práce"
-                        data-de="Unsere Arbeit">Naše Práce</a></div>
-                <div class="fs-link-wrapper"><a href="#objednavka" class="fs-link" data-cs="Zakázkové Pečení"
-                        data-de="Auftragsbacken">Zakázkové Pečení</a></div>
-                <div class="fs-link-wrapper"><a href="#hodnoceni" class="fs-link" data-cs="Hodnocení"
-                        data-de="Bewertungen">Hodnocení</a></div>
-            </div>
-
-            <div class="fs-footer">
-                <div class="fs-contact">
-                    <a href="tel:+420354422893">+420 354 422 893</a>
-                    <a href="mailto:Romana.rathouska@seznam.cz">Romana.rathouska@seznam.cz</a>
-                </div>
-                <div class="fs-lang">
-                    <button class="lang-btn active" onclick="setLanguage('cs')">CZ</button>
-                    <button class="lang-btn" onclick="setLanguage('de')">DE</button>
-                </div>
-            </div>
+        <!-- Notifikace o zkopírování -->
+        <div id="toast" class="toast">
+            <span data-cs="E-mail úspěšně zkopírován." data-de="E-Mail erfolgreich kopiert.">E-mail úspěšně
+                zkopírován.</span>
         </div>
-    </div>
 
-    <!-- V5: Regal Light Hero without Photos -->
-    <header class="hero-regal" id="hero">
-        <!-- Delicate Golden Grid Lines and abstract watermark -->
-        <div class="regal-bg-deco">
-            <div class="regal-grid-line gl-top"></div>
-            <div class="regal-grid-line gl-bottom"></div>
-            <div class="regal-grid-line gl-left"></div>
-            <div class="regal-grid-line gl-right"></div>
+        <!-- Avant-Garde Floating Navigation -->
+        <nav id="navbar" class="floating-nav">
+            <div class="nav-glass-pill">
+                <a href="#hero" class="brand-logo">
+                    <div class="crest-box crest-box-nav">
+                        <svg class="flourish flourish-top" viewBox="0 0 100 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 10c-5-2-10-8-15-8s-10 6-15 6-10-6-15-6-5 2-5 8" stroke="currentColor"
+                                stroke-width="1.2" stroke-linecap="round" />
+                            <path d="M50 10c5-2 10-8 15-8s10 6 15 6 10-6 15-6 5 2 5 8" stroke="currentColor"
+                                stroke-width="1.2" stroke-linecap="round" />
+                            <circle cx="50" cy="10" r="1.5" fill="currentColor" />
+                        </svg>
+                        <span class="crest-top" data-cs="Cukrárna" data-de="Konditorei">CUKRÁRNA</span>
+                        <span class="logo-main crest-main-nav">KAPUCÍN</span>
+                        <svg class="flourish flourish-bottom" viewBox="0 0 100 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 10c-5-2-10-8-15-8s-10 6-15 6-10-6-15-6-5 2-5 8" stroke="currentColor"
+                                stroke-width="1.2" stroke-linecap="round" />
+                            <path d="M50 10c5-2 10-8 15-8s10 6 15 6 10-6 15-6 5 2 5 8" stroke="currentColor"
+                                stroke-width="1.2" stroke-linecap="round" />
+                            <circle cx="50" cy="10" r="1.5" fill="currentColor" />
+                        </svg>
+                    </div>
+                </a>
 
-            <!-- Floating Pastry Sketches (Outlines) -->
-            <div class="pastry-sketch ps-1">
-                <!-- Zmrzlina (Ice Cream Cone) -->
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M7 11l5 11 5-11"></path>
-                    <path d="M17 11A5 5 0 0 0 7 11H17z"></path>
-                    <path d="M7 11c0-1.5 1-3 2.5-3s2.5 1.5 2.5 0 1-3 2.5-3A5 5 0 0 1 17 11H7z"></path>
-                    <!-- Cone lines -->
-                    <path d="M9 13l3 6"></path>
-                    <path d="M11 13l3 4"></path>
-                    <path d="M15 13l-3 6"></path>
-                    <path d="M13 13l-3 4"></path>
-                </svg>
+                <div class="nav-links-desktop">
+                    <a href="#rodokmen" class="nav-link" data-cs="Příběh" data-de="Geschichte">Příběh</a>
+                    <a href="#zazitek" class="nav-link" data-cs="Galerie" data-de="Galerie">Galerie</a>
+                    <a href="#objednavka" class="nav-link" data-cs="Zakázky" data-de="Aufträge">Zakázky</a>
+                    <a href="#hodnoceni" class="nav-link" data-cs="Hodnocení" data-de="Bewertungen">Hodnocení</a>
+                </div>
+
+                <div class="nav-actions">
+                    <div class="lang-switch-modern">
+                        <button class="lang-btn active" onclick="setLanguage('cs')">CZ</button>
+                        <button class="lang-btn" onclick="setLanguage('de')">DE</button>
+                    </div>
+                    <!-- Menu Toggle Button (Minimalist Lines) -->
+                    <button class="menu-toggle-modern" id="mobile-menu-btn" aria-label="Menu">
+                        <div class="line-wrap"><span class="line-top"></span></div>
+                        <div class="line-wrap"><span class="line-bottom"></span></div>
+                    </button>
+                </div>
             </div>
-            <div class="pastry-sketch ps-2">
-                <!-- Dort (Cake) -->
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"></path>
-                    <path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2 1 2 1"></path>
-                    <path d="M2 21h20"></path>
-                    <path d="M12 7v4"></path>
-                    <path d="M12 3v2"></path>
-                    <path d="M12 3C11 3 11 5 12 5C13 5 13 3 12 3z"></path>
-                </svg>
-            </div>
-            <div class="pastry-sketch ps-3">
-                <!-- Loupák (Detailed Croissant) -->
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path
-                        d="M4 14.5c0 4 5 6.5 8 6.5s8-2.5 8-6.5c0-1.5-1.5-5-3.5-6C14 7 13 4 12 4s-2 3-4.5 4.5C5.5 9.5 4 13 4 14.5z">
-                    </path>
-                    <path d="M6 12.5c2 1 4 1.5 6 1.5s4-.5 6-1.5"></path>
-                    <path d="M7 9.5c1.5 1 3 1.5 5 1.5s3.5-.5 5-1.5"></path>
-                    <path d="M9 7c1 .5 2 1 3 1s2-.5 3-1"></path>
-                </svg>
-            </div>
-            <div class="pastry-sketch ps-4">
-                <!-- Sušenka (Detailed Cookie with bite) -->
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path
-                        d="M12 2a10 10 0 1 0 10 10 1 1 0 0 0-1-1 2 2 0 0 1-2-2 1 1 0 0 0-1-1 2 2 0 0 1-2-2 1 1 0 0 0-1-1 2 2 0 0 1-2-2 1 1 0 0 0-1-1z">
-                    </path>
-                    <!-- Chocolate chips -->
-                    <circle cx="8" cy="10" r="1" fill="currentColor"></circle>
-                    <circle cx="14" cy="15" r="1.5" fill="currentColor"></circle>
-                    <circle cx="10" cy="16" r="1" fill="currentColor"></circle>
-                    <circle cx="15" cy="10" r="1" fill="currentColor"></circle>
-                    <circle cx="8" cy="14" r="1.5" fill="currentColor"></circle>
-                    <circle cx="11" cy="6" r="1" fill="currentColor"></circle>
-                </svg>
-            </div>
-            <div class="pastry-sketch ps-5">
-                <!-- Preclík (Pretzel) -->
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path
-                        d="M12 12c-3-3-6-4-8-2-2 3 .5 8 3 9s7-1 7-4c0-3-4-4-5-6-1.5-2 .5-4 3-4s4.5 2 3 4c-1 2-5 3-5 6 0 3 5 5 7 4s5-6 3-9c-2-2-5-1-8 2">
-                    </path>
-                    <!-- Salt bits -->
-                    <circle cx="6" cy="14" r="0.5" fill="currentColor"></circle>
-                    <circle cx="18" cy="14" r="0.5" fill="currentColor"></circle>
-                    <circle cx="12" cy="17" r="0.5" fill="currentColor"></circle>
-                    <circle cx="9" cy="8" r="0.5" fill="currentColor"></circle>
-                    <circle cx="15" cy="8" r="0.5" fill="currentColor"></circle>
-                </svg>
-            </div>
-            <div class="pastry-sketch ps-6">
-                <!-- Kousek Koláče (Pie Slice / Tart) -->
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M22 14L12 4 2 14v1c0 2.5 4.5 4 10 4s10-1.5 10-4v-1z"></path>
-                    <path d="M2 14c2-1 4 1 6 0 2-1 4 1 6 0 2-1 4 1 6 0"></path>
-                    <path d="M12 4v4"></path>
-                    <path d="M16.5 8.5l-2.5 2.5"></path>
-                    <path d="M7.5 8.5l2.5 2.5"></path>
-                </svg>
-            </div>
-            <div class="pastry-sketch ps-7">
-                <!-- Cupcake (Detailed) -->
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M6 13l1.5 8h9l1.5-8"></path>
-                    <path
-                        d="M5 13c-1.5 0-2-1-2-2 0-1.5 1.5-2 3-2 0-2 1.5-3 3-3 1-2 4-2 5 0 1.5 0 3 1 3 3 1.5 0 3 .5 3 2 0 1-.5 2-2 2">
-                    </path>
-                    <circle cx="12" cy="4" r="2"></circle>
-                    <path d="M12 2c1-1 3-1 4 0"></path>
-                    <path d="M9 13.5v7"></path>
-                    <path d="M12 13.5v7"></path>
-                    <path d="M15 13.5v7"></path>
-                </svg>
-            </div>
-            <div class="pastry-sketch ps-8">
-                <!-- Bonbón (Wrapped Candy) -->
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <polygon points="2 7 8 10 8 14 2 17 4 12"></polygon>
-                    <polygon points="22 7 16 10 16 14 22 17 20 12"></polygon>
-                    <rect x="8" y="9" width="8" height="6" rx="3"></rect>
-                    <path d="M11 9v6"></path>
-                    <path d="M13 9v6"></path>
-                </svg>
+        </nav>
+
+        <!-- Avant-Garde Fullscreen Overlay Menu -->
+        <div class="fullscreen-menu-overlay" id="mobile-nav">
+            <div class="fs-menu-bg"></div>
+            <div class="fs-menu-inner">
+                <div class="fs-header">
+                    <div class="crest-box crest-box-nav" style="transform: scale(0.9);">
+                        <span class="crest-top">CUKRÁRNA</span>
+                        <span class="crest-main-nav" style="color: var(--clr-gold);">KAPUCÍN</span>
+                    </div>
+                    <button class="fs-close" id="close-menu-btn">
+                        <span>ZAVŘÍT</span>
+                    </button>
+                </div>
+
+                <div class="fs-links">
+                    <div class="fs-link-wrapper"><a href="#rodokmen" class="fs-link" data-cs="Náš Příběh"
+                            data-de="Unsere Geschichte">Náš Příběh</a></div>
+                    <div class="fs-link-wrapper"><a href="#zazitek" class="fs-link" data-cs="Naše Práce"
+                            data-de="Unsere Arbeit">Naše Práce</a></div>
+                    <div class="fs-link-wrapper"><a href="#objednavka" class="fs-link" data-cs="Zakázkové Pečení"
+                            data-de="Auftragsbacken">Zakázkové Pečení</a></div>
+                    <div class="fs-link-wrapper"><a href="#hodnoceni" class="fs-link" data-cs="Hodnocení"
+                            data-de="Bewertungen">Hodnocení</a></div>
+                </div>
+
+                <div class="fs-footer">
+                    <div class="fs-contact">
+                        <a href="tel:+420354422893">+420 354 422 893</a>
+                        <a href="mailto:Romana.rathouska@seznam.cz">Romana.rathouska@seznam.cz</a>
+                    </div>
+                    <div class="fs-lang">
+                        <button class="lang-btn active" onclick="setLanguage('cs')">CZ</button>
+                        <button class="lang-btn" onclick="setLanguage('de')">DE</button>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="container hero-regal-container">
-            <div class="regal-content fade-in">
-                <!-- Massive Center Logo -->
-                <div class="giant-logo-wrap">
-                    <svg class="giant-flourish" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M100 20C80 15 60 5 40 5 20 5 0 15 0 15M100 20C120 15 140 5 160 5 180 5 200 15 200 15"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                        <circle cx="100" cy="20" r="3" fill="currentColor" />
+        <!-- V5: Regal Light Hero without Photos -->
+        <header class="hero-regal" id="hero">
+            <!-- Delicate Golden Grid Lines and abstract watermark -->
+            <div class="regal-bg-deco">
+                <div class="regal-grid-line gl-top"></div>
+                <div class="regal-grid-line gl-bottom"></div>
+                <div class="regal-grid-line gl-left"></div>
+                <div class="regal-grid-line gl-right"></div>
+
+                <!-- Floating Pastry Sketches (Outlines) -->
+                <div class="pastry-sketch ps-1">
+                    <!-- Zmrzlina (Ice Cream Cone) -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 11l5 11 5-11"></path>
+                        <path d="M17 11A5 5 0 0 0 7 11H17z"></path>
+                        <path d="M7 11c0-1.5 1-3 2.5-3s2.5 1.5 2.5 0 1-3 2.5-3A5 5 0 0 1 17 11H7z"></path>
+                        <!-- Cone lines -->
+                        <path d="M9 13l3 6"></path>
+                        <path d="M11 13l3 4"></path>
+                        <path d="M15 13l-3 6"></path>
+                        <path d="M13 13l-3 4"></path>
                     </svg>
-
-                    <div class="giant-crest-top" data-cs="Cukrárna" data-de="Konditorei">CUKRÁRNA</div>
-                    <h1 class="giant-logo-main">KAPUCÍN</h1>
-
-                    <svg class="giant-flourish" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                </div>
+                <div class="pastry-sketch ps-2">
+                    <!-- Dort (Cake) -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"></path>
+                        <path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2 1 2 1"></path>
+                        <path d="M2 21h20"></path>
+                        <path d="M12 7v4"></path>
+                        <path d="M12 3v2"></path>
+                        <path d="M12 3C11 3 11 5 12 5C13 5 13 3 12 3z"></path>
+                    </svg>
+                </div>
+                <div class="pastry-sketch ps-3">
+                    <!-- Loupák (Detailed Croissant) -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                        stroke-linejoin="round">
                         <path
-                            d="M100 20C80 25 60 35 40 35 20 35 0 25 0 25M100 20C120 25 140 35 160 35 180 35 200 25 200 25"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                        <circle cx="100" cy="20" r="3" fill="currentColor" />
+                            d="M4 14.5c0 4 5 6.5 8 6.5s8-2.5 8-6.5c0-1.5-1.5-5-3.5-6C14 7 13 4 12 4s-2 3-4.5 4.5C5.5 9.5 4 13 4 14.5z">
+                        </path>
+                        <path d="M6 12.5c2 1 4 1.5 6 1.5s4-.5 6-1.5"></path>
+                        <path d="M7 9.5c1.5 1 3 1.5 5 1.5s3.5-.5 5-1.5"></path>
+                        <path d="M9 7c1 .5 2 1 3 1s2-.5 3-1"></path>
                     </svg>
                 </div>
-
-                <div class="regal-tagline-wrap slide-up delay-1">
-                    <p class="regal-tagline" data-cs="Vaše vysněné dorty s královskou péčí od roku 1991"
-                        data-de="Ihre Traumtorten mit königlicher Pflege seit 1991">
-                        Vaše vysněné dorty s královskou péčí od roku 1991
-                    </p>
+                <div class="pastry-sketch ps-4">
+                    <!-- Sušenka (Detailed Cookie with bite) -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M12 2a10 10 0 1 0 10 10 1 1 0 0 0-1-1 2 2 0 0 1-2-2 1 1 0 0 0-1-1 2 2 0 0 1-2-2 1 1 0 0 0-1-1 2 2 0 0 1-2-2 1 1 0 0 0-1-1z">
+                        </path>
+                        <!-- Chocolate chips -->
+                        <circle cx="8" cy="10" r="1" fill="currentColor"></circle>
+                        <circle cx="14" cy="15" r="1.5" fill="currentColor"></circle>
+                        <circle cx="10" cy="16" r="1" fill="currentColor"></circle>
+                        <circle cx="15" cy="10" r="1" fill="currentColor"></circle>
+                        <circle cx="8" cy="14" r="1.5" fill="currentColor"></circle>
+                        <circle cx="11" cy="6" r="1" fill="currentColor"></circle>
+                    </svg>
                 </div>
-
-                <div class="regal-actions slide-up delay-2">
-                    <a href="#objednavka" class="btn btn-gold btn-large" data-cs="Poptat Pečení"
-                        data-de="Backen anfragen">Poptat Pečení</a>
+                <div class="pastry-sketch ps-5">
+                    <!-- Preclík (Pretzel) -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M12 12c-3-3-6-4-8-2-2 3 .5 8 3 9s7-1 7-4c0-3-4-4-5-6-1.5-2 .5-4 3-4s4.5 2 3 4c-1 2-5 3-5 6 0 3 5 5 7 4s5-6 3-9c-2-2-5-1-8 2">
+                        </path>
+                        <!-- Salt bits -->
+                        <circle cx="6" cy="14" r="0.5" fill="currentColor"></circle>
+                        <circle cx="18" cy="14" r="0.5" fill="currentColor"></circle>
+                        <circle cx="12" cy="17" r="0.5" fill="currentColor"></circle>
+                        <circle cx="9" cy="8" r="0.5" fill="currentColor"></circle>
+                        <circle cx="15" cy="8" r="0.5" fill="currentColor"></circle>
+                    </svg>
+                </div>
+                <div class="pastry-sketch ps-6">
+                    <!-- Kousek Koláče (Pie Slice / Tart) -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M22 14L12 4 2 14v1c0 2.5 4.5 4 10 4s10-1.5 10-4v-1z"></path>
+                        <path d="M2 14c2-1 4 1 6 0 2-1 4 1 6 0 2-1 4 1 6 0"></path>
+                        <path d="M12 4v4"></path>
+                        <path d="M16.5 8.5l-2.5 2.5"></path>
+                        <path d="M7.5 8.5l2.5 2.5"></path>
+                    </svg>
+                </div>
+                <div class="pastry-sketch ps-7">
+                    <!-- Cupcake (Detailed) -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M6 13l1.5 8h9l1.5-8"></path>
+                        <path
+                            d="M5 13c-1.5 0-2-1-2-2 0-1.5 1.5-2 3-2 0-2 1.5-3 3-3 1-2 4-2 5 0 1.5 0 3 1 3 3 1.5 0 3 .5 3 2 0 1-.5 2-2 2">
+                        </path>
+                        <circle cx="12" cy="4" r="2"></circle>
+                        <path d="M12 2c1-1 3-1 4 0"></path>
+                        <path d="M9 13.5v7"></path>
+                        <path d="M12 13.5v7"></path>
+                        <path d="M15 13.5v7"></path>
+                    </svg>
+                </div>
+                <div class="pastry-sketch ps-8">
+                    <!-- Bonbón (Wrapped Candy) -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polygon points="2 7 8 10 8 14 2 17 4 12"></polygon>
+                        <polygon points="22 7 16 10 16 14 22 17 20 12"></polygon>
+                        <rect x="8" y="9" width="8" height="6" rx="3"></rect>
+                        <path d="M11 9v6"></path>
+                        <path d="M13 9v6"></path>
+                    </svg>
                 </div>
             </div>
-        </div>
 
-        <!-- Scroll Indicator -->
-        <a href="#rodokmen" class="scroll-indicator-wrap" aria-label="Scroll down">
-            <div class="scroll-line"></div>
-        </a>
-    </header>
+            <div class="container hero-regal-container">
+                <div class="regal-content fade-in">
+                    <!-- Massive Center Logo -->
+                    <div class="giant-logo-wrap">
+                        <svg class="giant-flourish" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M100 20C80 15 60 5 40 5 20 5 0 15 0 15M100 20C120 15 140 5 160 5 180 5 200 15 200 15"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                            <circle cx="100" cy="20" r="3" fill="currentColor" />
+                        </svg>
 
-    <!-- V4: Sticky Scroll Story -->
-    <section class="story-sticky patterned" id="rodokmen">
-        <div class="container ss-container">
-            <!-- Left Fixed Image -->
-            <div class="ss-left fade-in">
-                <div class="ss-img-wrapper">
-                    <img src="IMG_2577.jpg" class="ss-img" alt="Řemeslná tradice">
-                    <div class="polaroid-caption">OD ROKU 1991</div>
+                        <div class="giant-crest-top" data-cs="Cukrárna" data-de="Konditorei">CUKRÁRNA</div>
+                        <h1 class="giant-logo-main">KAPUCÍN</h1>
+
+                        <svg class="giant-flourish" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M100 20C80 25 60 35 40 35 20 35 0 25 0 25M100 20C120 25 140 35 160 35 180 35 200 25 200 25"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                            <circle cx="100" cy="20" r="3" fill="currentColor" />
+                        </svg>
+                    </div>
+
+                    <div class="regal-tagline-wrap slide-up delay-1">
+                        <p class="regal-tagline" data-cs="Vaše vysněné dorty s královskou péčí od roku 1991"
+                            data-de="Ihre Traumtorten mit königlicher Pflege seit 1991">
+                            Vaše vysněné dorty s královskou péčí od roku 1991
+                        </p>
+                    </div>
+
+                    <div class="regal-actions slide-up delay-2">
+                        <a href="#objednavka" class="btn btn-gold btn-large" data-cs="Poptat Pečení"
+                            data-de="Backen anfragen">Poptat Pečení</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Right Scrolling Content -->
-            <div class="ss-right">
-                <div class="ss-header slide-up">
-                    <h2 data-cs="Vůně řemesla a tradice" data-de="Der Duft von Handwerk und Tradition">Vůně řemesla a
-                        tradice</h2>
+            <!-- Scroll Indicator -->
+            <a href="#rodokmen" class="scroll-indicator-wrap" aria-label="Scroll down">
+                <div class="scroll-line"></div>
+            </a>
+        </header>
+
+        <!-- V4: Sticky Scroll Story -->
+        <section class="story-sticky patterned" id="rodokmen">
+            <div class="container ss-container">
+                <!-- Left Fixed Image -->
+                <div class="ss-left fade-in">
+                    <div class="ss-img-wrapper">
+                        <img src="IMG_6718.PNG" class="ss-img" alt="Řemeslná tradice">
+                        <div class="polaroid-caption">OD ROKU 1991</div>
+                    </div>
+                </div>
+
+                <!-- Right Scrolling Content -->
+                <div class="ss-right">
+                    <div class="ss-header slide-up">
+                        <h2 data-cs="Vůně řemesla a tradice" data-de="Der Duft von Handwerk und Tradition">Vůně řemesla
+                            a
+                            tradice</h2>
+                        <div class="divider-ornate">
+                            <span></span><svg width="20" height="20" viewBox="0 0 20 20">
+                                <path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8L10 0Z" fill="currentColor" />
+                            </svg><span></span>
+                        </div>
+                    </div>
+
+                    <div class="ss-block slide-up">
+                        <span class="ss-chapter">01</span>
+                        <h3 data-cs="Když tvoří rodinné ruce" data-de="Wenn Familienhände kreieren">Když tvoří rodinné
+                            ruce
+                        </h3>
+                        <p data-cs="Už od roku 1991 je Cukrárna Kapucín ve městě Cheb pojmem pro ty, kteří si potrpí na to opravdové."
+                            data-de="Seit 1991 ist die Konditorei Kapucín in der Stadt Cheb ein Begriff für alle, die das Echte schätzen.">
+                            Už od roku 1991 je Cukrárna Kapucín ve městě Cheb pojmem pro ty, kteří si potrpí na to
+                            opravdové.
+                        </p>
+                    </div>
+
+                    <div class="ss-block slide-up delay-1">
+                        <span class="ss-chapter">02</span>
+                        <h3 data-cs="Žádné zkratky" data-de="Keine Abkürzungen">Žádné zkratky</h3>
+                        <p data-cs="Nekonáme ohromující zázraky z umělých krémů. Naše cesta je vůně másla, pravá ovocná chuť a domácí recepty."
+                            data-de="Wir vollbringen keine verblüffenden Wunder aus künstlichen Cremes. Unser Weg ist der Duft von Butter, echter Fruchtgeschmack und hausgemachte Rezepte.">
+                            Nekonáme ohromující zázraky z umělých krémů. Naše cesta je vůně másla, pravá ovocná chuť a
+                            domácí recepty.
+                        </p>
+                    </div>
+
+                    <div class="ss-block slide-up delay-2">
+                        <span class="ss-chapter">03</span>
+                        <h3 data-cs="Vaše chvíle pohody" data-de="Ihr Moment des Wohlbefinden">Vaše chvíle pohody</h3>
+                        <p data-cs="Máme malý útulný prostor s několika stolky, kde si můžete dát šálek výběrové kávy a nechat starosti za dveřmi. Jsme tu s úsměvem a láskou k řemeslu."
+                            data-de="Wir haben einen kleinen, gemütlichen Raum mit ein paar Tischen, wo Sie eine Tasse frisch gerösteten Kaffees genießen und Ihre Sorgen an der Tür lassen können.">
+                            Máme malý útulný prostor s několika stolky, kde si můžete dát šálek výběrové kávy a nechat
+                            starosti za dveřmi. Jsme tu s úsměvem a láskou k řemeslu.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Objednávka / Kontakt Sekce (Zvýrazněná, prémiový design) -->
+        <section class="order-section highlight-bg" id="objednavka">
+            <div class="container">
+                <div class="section-heading text-center slide-up">
+                    <div class="badge-gold" data-cs="Služby na míru" data-de="Maßgeschneiderte Dienstleistungen">Služby
+                        na
+                        míru</div>
+                    <h2 data-cs="Vy sníte, my pečeme" data-de="Sie träumen, wir backen">Vy sníte, my pečeme</h2>
                     <div class="divider-ornate">
                         <span></span><svg width="20" height="20" viewBox="0 0 20 20">
                             <path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8L10 0Z" fill="currentColor" />
@@ -315,372 +367,331 @@
                     </div>
                 </div>
 
-                <div class="ss-block slide-up">
-                    <span class="ss-chapter">01</span>
-                    <h3 data-cs="Když tvoří rodinné ruce" data-de="Wenn Familienhände kreieren">Když tvoří rodinné ruce
-                    </h3>
-                    <p data-cs="Už od roku 1991 je Cukrárna Kapucín ve městě Cheb pojmem pro ty, kteří si potrpí na to opravdové."
-                        data-de="Seit 1991 ist die Konditorei Kapucín in der Stadt Cheb ein Begriff für alle, die das Echte schätzen.">
-                        Už od roku 1991 je Cukrárna Kapucín ve městě Cheb pojmem pro ty, kteří si potrpí na to
-                        opravdové.
+                <div class="order-intro slide-up delay-1 text-center">
+                    <p class="lead-text"
+                        data-cs="Proměníme každou vaši událost v nezapomenutelný kulinářský zážitek. Ať už plánujete <strong>pohádkovou svatbu</strong> a hledáte dokonalý patrový dort, podáváte <strong>zákusky na velkolepé oslavě</strong>, nebo sháníte ty nejlepší <strong>chlebíčky a slané občerstvení</strong> na firemní večírek – jsme tu pro vás s naším umem a láskou k řemeslu."
+                        data-de="Wir verwandeln jede Ihrer Veranstaltungen in ein unvergessliches kulinarisches Erlebnis. Ob Sie eine <strong>märchenhafte Hochzeit</strong> planen und eine perfekte stöckige Torte suchen, <strong>Desserts auf einer großen Feier</strong> servieren oder die besten <strong>belegten Brötchen (Chlebíčky) und herzhaften Snacks</strong> für eine Firmenfeier suchen – wir sind mit unserem Können und unserer Liebe zum Handwerk für Sie da.">
+                        Proměníme každou vaši událost v nezapomenutelný kulinářský zážitek. Ať už plánujete
+                        <strong>pohádkovou svatbu</strong> a hledáte dokonalý patrový dort, podáváte <strong>zákusky na
+                            velkolepé oslavě</strong>, nebo sháníte ty nejlepší <strong>chlebíčky a slané
+                            občerstvení</strong> na firemní večírek – jsme tu pro vás s naším umem a láskou k řemeslu.
                     </p>
                 </div>
 
-                <div class="ss-block slide-up delay-1">
-                    <span class="ss-chapter">02</span>
-                    <h3 data-cs="Žádné zkratky" data-de="Keine Abkürzungen">Žádné zkratky</h3>
-                    <p data-cs="Nekonáme ohromující zázraky z umělých krémů. Naše cesta je vůně másla, pravá ovocná chuť a domácí recepty."
-                        data-de="Wir vollbringen keine verblüffenden Wunder aus künstlichen Cremes. Unser Weg ist der Duft von Butter, echter Fruchtgeschmack und hausgemachte Rezepte.">
-                        Nekonáme ohromující zázraky z umělých krémů. Naše cesta je vůně másla, pravá ovocná chuť a
-                        domácí recepty.
-                    </p>
+                <div class="services-grid slide-up delay-1">
+                    <div class="service-box">
+                        <div class="s-icon">🎂</div>
+                        <h4 data-cs="Svatební dorty" data-de="Hochzeitstorten">Svatební dorty</h4>
+                        <p data-cs="Od návrhu po vrchní patro. Klasické, moderní i nahé dorty podle aktuálních trendů."
+                            data-de="Vom Entwurf bis zur obersten Etage. Klassische, Naked und moderne Torten nach aktuellen Trends.">
+                            Od návrhu po vrchní patro. Klasické, moderní i nahé dorty podle aktuálních trendů.</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="s-icon">🧁</div>
+                        <h4 data-cs="Zákusky na oslavy" data-de="Desserts für Feiern">Zákusky na oslavy</h4>
+                        <p data-cs="Mini dezerty, rolády, makronky a věnečky poskládané pro dokonalý sladký bar."
+                            data-de="Minidesserts, Rouladen, Macarons und Kränze, zusammengestellt für eine perfekte Candy Bar.">
+                            Mini dezerty, rolády, makronky a věnečky poskládané pro dokonalý sladký bar.</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="s-icon">🥖</div>
+                        <h4 data-cs="Chlebíčky & Slané" data-de="Brötchen & Herzhaftes">Chlebíčky & Slané</h4>
+                        <p data-cs="Prvotřídně zdobené domácí chlebíčky a slaný catering pro každou příležitost."
+                            data-de="Erstklassig dekorierte hausgemachte belegte Brötchen und herzhaftes Catering für jeden Anlass.">
+                            Prvotřídně zdobené domácí chlebíčky a slaný catering pro každou příležitost.</p>
+                    </div>
                 </div>
 
-                <div class="ss-block slide-up delay-2">
-                    <span class="ss-chapter">03</span>
-                    <h3 data-cs="Vaše chvíle pohody" data-de="Ihr Moment des Wohlbefinden">Vaše chvíle pohody</h3>
-                    <p data-cs="Máme malý útulný prostor s několika stolky, kde si můžete dát šálek výběrové kávy a nechat starosti za dveřmi. Jsme tu s úsměvem a láskou k řemeslu."
-                        data-de="Wir haben einen kleinen, gemütlichen Raum mit ein paar Tischen, wo Sie eine Tasse frisch gerösteten Kaffees genießen und Ihre Sorgen an der Tür lassen können.">
-                        Máme malý útulný prostor s několika stolky, kde si můžete dát šálek výběrové kávy a nechat
-                        starosti za dveřmi. Jsme tu s úsměvem a láskou k řemeslu.
-                    </p>
+                <div class="elegant-contact-block slide-up delay-2">
+                    <div class="ec-inner">
+                        <div class="ec-badge" data-cs="Ozvěte se nám" data-de="Kontaktieren Sie uns">Ozvěte se nám</div>
+                        <h3 data-cs="Těšíme se na vaše přání" data-de="Wir freuen uns auf Ihre Wünsche">Těšíme se na
+                            vaše
+                            přání</h3>
+                        <p class="ec-text"
+                            data-cs="Rádi s vámi probereme detaily a vytvoříme pro vás něco opravdu jedinečného."
+                            data-de="Gerne besprechen wir die Details mit Ihnen und kreieren etwas wirklich Einzigartiges für Sie.">
+                            Rádi s vámi probereme detaily a vytvoříme pro vás něco opravdu jedinečného.</p>
+
+                        <div class="ec-grid">
+                            <a href="tel:+420354422893" class="ec-item">
+                                <span class="ec-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <div class="ec-content">
+                                    <span class="ec-label" data-cs="Zavolejte nám" data-de="Rufen Sie uns an">Zavolejte
+                                        nám</span>
+                                    <strong class="ec-value">+420 354 422 893</strong>
+                                </div>
+                            </a>
+                            <div class="ec-divider"></div>
+                            <a href="mailto:Romana.rathouska@seznam.cz" class="ec-item">
+                                <span class="ec-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </span>
+                                <div class="ec-content">
+                                    <span class="ec-label" data-cs="Napište nám" data-de="Schreiben Sie uns">Napište
+                                        nám</span>
+                                    <strong class="ec-value">Romana.rathouska@seznam.cz</strong>
+                                </div>
+                            </a>
+                            <div class="ec-divider"></div>
+                            <div class="ec-item">
+                                <span class="ec-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </span>
+                                <div class="ec-content">
+                                    <span class="ec-label" data-cs="Navštivte nás" data-de="Besuchen Sie uns">Navštivte
+                                        nás</span>
+                                    <strong class="ec-value">Židovská 399/22, Cheb</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Objednávka / Kontakt Sekce (Zvýrazněná, prémiový design) -->
-    <section class="order-section highlight-bg" id="objednavka">
-        <div class="container">
-            <div class="section-heading text-center slide-up">
-                <div class="badge-gold" data-cs="Služby na míru" data-de="Maßgeschneiderte Dienstleistungen">Služby na
-                    míru</div>
-                <h2 data-cs="Vy sníte, my pečeme" data-de="Sie träumen, wir backen">Vy sníte, my pečeme</h2>
-                <div class="divider-ornate">
+        <!-- V5: Customer Reviews Section -->
+        <section class="reviews-section patterned" id="hodnoceni">
+            <div class="rev-container slide-up">
+                <div class="rev-heading">
+                    <h2 data-cs="Napsali o nás" data-de="Was man über uns sagt">Napsali o nás</h2>
+                    <div class="divider-ornate">
+                        <span></span><svg width="20" height="20" viewBox="0 0 20 20">
+                            <path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8L10 0Z" fill="currentColor" />
+                        </svg><span></span>
+                    </div>
+                </div>
+
+                <div class="review-grid slide-up delay-1">
+                    <!-- Review 1 -->
+                    <div class="review-card">
+                        <div class="rev-stars">★★★★★</div>
+                        <span class="rev-quote-icon">“</span>
+                        <p class="rev-text"
+                            data-cs="Cukrárna staršího rázu. Obsluha byla moc milá a příjemná. Zákusky jsou spíše českého staršího charakteru, modernu zde nehledejte. Chuťově jsou ale moc dobré a poctivé."
+                            data-de="Ältere Konditorei. Die Bedienung war sehr nett und angenehm. Die Desserts sind geschmacklich sehr gut und ehrlich.">
+                            Cukrárna staršího rázu. Obsluha byla moc milá a příjemná. Zákusky jsou spíše českého
+                            staršího
+                            charakteru, modernu zde nehledejte. Chuťově jsou ale moc dobré a poctivé.</p>
+                        <div class="rev-author">— Eliška V.</div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="review-card">
+                        <div class="rev-stars">★★★★★</div>
+                        <span class="rev-quote-icon">“</span>
+                        <p class="rev-text" data-cs="Milá obsluha. Skvělé zákusky a koláčky."
+                            data-de="Nette Bedienung. Tolle Desserts und Kuchen.">
+                            Milá obsluha. Skvělé zákusky a koláčky.</p>
+                        <div class="rev-author">— Natalie H.</div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="review-card">
+                        <div class="rev-stars">★★★★★</div>
+                        <span class="rev-quote-icon">“</span>
+                        <p class="rev-text" data-cs="Úžasná cukrárna. Znám ji už od dětství."
+                            data-de="Tolle Konditorei. Ich kenne sie schon seit meiner Kindheit.">
+                            Úžasná cukrárna. Znám ji už od dětství.</p>
+                        <div class="rev-author">— Petra L.</div>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="review-card">
+                        <div class="rev-stars">★★★★★</div>
+                        <span class="rev-quote-icon">“</span>
+                        <p class="rev-text" data-cs="Příjemná atmosféra, příjemný personál a chutné zákusky."
+                            data-de="Angenehme Atmosphäre, freundliches Personal und leckere Desserts.">
+                            Příjemná atmosféra, příjemný personál a chutné zákusky.</p>
+                        <div class="rev-author">— Ondřej M.</div>
+                    </div>
+
+                    <!-- Review 5 -->
+                    <div class="review-card">
+                        <div class="rev-stars">★★★★★</div>
+                        <span class="rev-quote-icon">“</span>
+                        <p class="rev-text"
+                            data-cs="Útulná cukrárna s milou obsluhou. Vynikající zákusky. Doporučujeme 🥰"
+                            data-de="Gemütliche Konditorei mit netter Bedienung. Hervorragende Desserts. Wir empfehlen 🥰">
+                            Útulná cukrárna s milou obsluhou. Vynikající zákusky. Doporučujeme 🥰</p>
+                        <div class="rev-author">— Hana</div>
+                    </div>
+                </div>
+
+                <div class="reviews-source"
+                    style="text-align: center; margin-top: 30px; font-family: var(--font-body); color: var(--clr-text-light); opacity: 0.7; font-size: 0.9rem;">
+                    Hodnocení našich zákazníků z veřejného profilu <a
+                        href="https://maps.google.com/?q=50.0789831,12.3673872" target="_blank"
+                        style="color: var(--clr-gold); text-decoration: none;">Google Maps</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galerie -->
+        <section class="gallery-section dark-realm" id="zazitek">
+            <div class="container text-center slide-up">
+                <h2 data-cs="Z pod rukou našich mistrů" data-de="Aus den Händen unserer Meister">Z pod rukou našich
+                    mistrů
+                </h2>
+                <div class="divider-ornate gold">
                     <span></span><svg width="20" height="20" viewBox="0 0 20 20">
                         <path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8L10 0Z" fill="currentColor" />
                     </svg><span></span>
                 </div>
             </div>
 
-            <div class="order-intro slide-up delay-1 text-center">
-                <p class="lead-text"
-                    data-cs="Proměníme každou vaši událost v nezapomenutelný kulinářský zážitek. Ať už plánujete <strong>pohádkovou svatbu</strong> a hledáte dokonalý patrový dort, podáváte <strong>zákusky na velkolepé oslavě</strong>, nebo sháníte ty nejlepší <strong>chlebíčky a slané občerstvení</strong> na firemní večírek – jsme tu pro vás s naším umem a láskou k řemeslu."
-                    data-de="Wir verwandeln jede Ihrer Veranstaltungen in ein unvergessliches kulinarisches Erlebnis. Ob Sie eine <strong>märchenhafte Hochzeit</strong> planen und eine perfekte stöckige Torte suchen, <strong>Desserts auf einer großen Feier</strong> servieren oder die besten <strong>belegten Brötchen (Chlebíčky) und herzhaften Snacks</strong> für eine Firmenfeier suchen – wir sind mit unserem Können und unserer Liebe zum Handwerk für Sie da.">
-                    Proměníme každou vaši událost v nezapomenutelný kulinářský zážitek. Ať už plánujete
-                    <strong>pohádkovou svatbu</strong> a hledáte dokonalý patrový dort, podáváte <strong>zákusky na
-                        velkolepé oslavě</strong>, nebo sháníte ty nejlepší <strong>chlebíčky a slané
-                        občerstvení</strong> na firemní večírek – jsme tu pro vás s naším umem a láskou k řemeslu.
-                </p>
-            </div>
-
-            <div class="services-grid slide-up delay-1">
-                <div class="service-box">
-                    <div class="s-icon">🎂</div>
-                    <h4 data-cs="Svatební dorty" data-de="Hochzeitstorten">Svatební dorty</h4>
-                    <p data-cs="Od návrhu po vrchní patro. Klasické, moderní i nahé dorty podle aktuálních trendů."
-                        data-de="Vom Entwurf bis zur obersten Etage. Klassische, Naked und moderne Torten nach aktuellen Trends.">
-                        Od návrhu po vrchní patro. Klasické, moderní i nahé dorty podle aktuálních trendů.</p>
-                </div>
-                <div class="service-box">
-                    <div class="s-icon">🧁</div>
-                    <h4 data-cs="Zákusky na oslavy" data-de="Desserts für Feiern">Zákusky na oslavy</h4>
-                    <p data-cs="Mini dezerty, rolády, makronky a věnečky poskládané pro dokonalý sladký bar."
-                        data-de="Minidesserts, Rouladen, Macarons und Kränze, zusammengestellt für eine perfekte Candy Bar.">
-                        Mini dezerty, rolády, makronky a věnečky poskládané pro dokonalý sladký bar.</p>
-                </div>
-                <div class="service-box">
-                    <div class="s-icon">🥖</div>
-                    <h4 data-cs="Chlebíčky & Slané" data-de="Brötchen & Herzhaftes">Chlebíčky & Slané</h4>
-                    <p data-cs="Prvotřídně zdobené domácí chlebíčky a slaný catering pro každou příležitost."
-                        data-de="Erstklassig dekorierte hausgemachte belegte Brötchen und herzhaftes Catering für jeden Anlass.">
-                        Prvotřídně zdobené domácí chlebíčky a slaný catering pro každou příležitost.</p>
-                </div>
-            </div>
-
-            <div class="elegant-contact-block slide-up delay-2">
-                <div class="ec-inner">
-                    <div class="ec-badge" data-cs="Ozvěte se nám" data-de="Kontaktieren Sie uns">Ozvěte se nám</div>
-                    <h3 data-cs="Těšíme se na vaše přání" data-de="Wir freuen uns auf Ihre Wünsche">Těšíme se na vaše
-                        přání</h3>
-                    <p class="ec-text"
-                        data-cs="Rádi s vámi probereme detaily a vytvoříme pro vás něco opravdu jedinečného."
-                        data-de="Gerne besprechen wir die Details mit Ihnen und kreieren etwas wirklich Einzigartiges für Sie.">
-                        Rádi s vámi probereme detaily a vytvoříme pro vás něco opravdu jedinečného.</p>
-
-                    <div class="ec-grid">
-                        <a href="tel:+420354422893" class="ec-item">
-                            <span class="ec-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path
-                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                                    </path>
-                                </svg>
-                            </span>
-                            <div class="ec-content">
-                                <span class="ec-label" data-cs="Zavolejte nám" data-de="Rufen Sie uns an">Zavolejte
-                                    nám</span>
-                                <strong class="ec-value">+420 354 422 893</strong>
-                            </div>
-                        </a>
-                        <div class="ec-divider"></div>
-                        <a href="mailto:Romana.rathouska@seznam.cz" class="ec-item">
-                            <span class="ec-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                    </path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg>
-                            </span>
-                            <div class="ec-content">
-                                <span class="ec-label" data-cs="Napište nám" data-de="Schreiben Sie uns">Napište
-                                    nám</span>
-                                <strong class="ec-value">Romana.rathouska@seznam.cz</strong>
-                            </div>
-                        </a>
-                        <div class="ec-divider"></div>
-                        <div class="ec-item">
-                            <span class="ec-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                    <circle cx="12" cy="10" r="3"></circle>
-                                </svg>
-                            </span>
-                            <div class="ec-content">
-                                <span class="ec-label" data-cs="Navštivte nás" data-de="Besuchen Sie uns">Navštivte
-                                    nás</span>
-                                <strong class="ec-value">Židovská 399/22, Cheb</strong>
-                            </div>
+            <div class="container slide-up delay-1" style="padding: 0;">
+                <div class="bento-gallery-wrapper slide-up delay-1">
+                    <div class="bento-gallery">
+                        <div class="bento-item">
+                            <img src="IMG_6719.PNG" class="bento-img" alt="Naše práce" data-index="0" loading="lazy">
+                        </div>
+                        <div class="bento-item">
+                            <img src="IMG_6721.PNG" class="bento-img" alt="Naše práce" data-index="1" loading="lazy">
+                        </div>
+                        <div class="bento-item">
+                            <img src="IMG_6723.PNG" class="bento-img" alt="Naše práce" data-index="2" loading="lazy">
+                        </div>
+                        <div class="bento-item">
+                            <img src="IMG_6726.PNG" class="bento-img" alt="Naše práce" data-index="3" loading="lazy">
+                        </div>
+                        <div class="bento-item">
+                            <img src="IMG_6727.PNG" class="bento-img" alt="Naše práce" data-index="4" loading="lazy">
+                        </div>
+                        <div class="bento-item">
+                            <img src="IMG_6728.PNG" class="bento-img" alt="Naše práce" data-index="5" loading="lazy">
+                        </div>
+                        <div class="bento-item">
+                            <img src="IMG_6730.PNG" class="bento-img" alt="Naše práce" data-index="6" loading="lazy">
+                        </div>
+                        <div class="bento-item">
+                            <img src="IMG_6739.PNG" class="bento-img" alt="Naše práce" data-index="7" loading="lazy">
+                        </div>
+                        <div class="bento-item">
+                            <img src="IMG_6737.PNG" class="bento-img" alt="Naše práce" data-index="8" loading="lazy">
+                        </div>
+                        <div class="bento-item">
+                            <img src="IMG_6732.PNG" class="bento-img" alt="Naše práce" data-index="9" loading="lazy">
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- V5: Customer Reviews Section -->
-    <section class="reviews-section patterned" id="hodnoceni">
-        <div class="rev-container slide-up">
-            <div class="rev-heading">
-                <h2 data-cs="Napsali o nás" data-de="Was man über uns sagt">Napsali o nás</h2>
-                <div class="divider-ornate">
-                    <span></span><svg width="20" height="20" viewBox="0 0 20 20">
-                        <path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8L10 0Z" fill="currentColor" />
-                    </svg><span></span>
-                </div>
+        <!-- Zlatý Lightbox s navigací -->
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-controls">
+                <span class="lightbox-counter" id="lightbox-counter">1 / 9</span>
+                <span class="close-lightbox" id="close-lightbox">&times;</span>
             </div>
 
-            <div class="review-grid slide-up delay-1">
-                <!-- Review 1 -->
-                <div class="review-card">
-                    <div class="rev-stars">★★★★★</div>
-                    <span class="rev-quote-icon">“</span>
-                    <p class="rev-text"
-                        data-cs="Cukrárna staršího rázu. Obsluha byla moc milá a příjemná. Zákusky jsou spíše českého staršího charakteru, modernu zde nehledejte. Chuťově jsou ale moc dobré a poctivé."
-                        data-de="Ältere Konditorei. Die Bedienung war sehr nett und angenehm. Die Desserts sind geschmacklich sehr gut und ehrlich.">
-                        Cukrárna staršího rázu. Obsluha byla moc milá a příjemná. Zákusky jsou spíše českého staršího
-                        charakteru, modernu zde nehledejte. Chuťově jsou ale moc dobré a poctivé.</p>
-                    <div class="rev-author">— Eliška V.</div>
-                </div>
+            <button class="lightbox-nav lb-prev" id="lb-prev" aria-label="Předchozí obrázek">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"></path>
+                </svg>
+            </button>
 
-                <!-- Review 2 -->
-                <div class="review-card">
-                    <div class="rev-stars">★★★★★</div>
-                    <span class="rev-quote-icon">“</span>
-                    <p class="rev-text" data-cs="Milá obsluha. Skvělé zákusky a koláčky."
-                        data-de="Nette Bedienung. Tolle Desserts und Kuchen.">
-                        Milá obsluha. Skvělé zákusky a koláčky.</p>
-                    <div class="rev-author">— Natalie H.</div>
-                </div>
-
-                <!-- Review 3 -->
-                <div class="review-card">
-                    <div class="rev-stars">★★★★★</div>
-                    <span class="rev-quote-icon">“</span>
-                    <p class="rev-text" data-cs="Úžasná cukrárna. Znám ji už od dětství."
-                        data-de="Tolle Konditorei. Ich kenne sie schon seit meiner Kindheit.">
-                        Úžasná cukrárna. Znám ji už od dětství.</p>
-                    <div class="rev-author">— Petra L.</div>
-                </div>
-
-                <!-- Review 4 -->
-                <div class="review-card">
-                    <div class="rev-stars">★★★★★</div>
-                    <span class="rev-quote-icon">“</span>
-                    <p class="rev-text" data-cs="Příjemná atmosféra, příjemný personál a chutné zákusky."
-                        data-de="Angenehme Atmosphäre, freundliches Personal und leckere Desserts.">
-                        Příjemná atmosféra, příjemný personál a chutné zákusky.</p>
-                    <div class="rev-author">— Ondřej M.</div>
-                </div>
-
-                <!-- Review 5 -->
-                <div class="review-card">
-                    <div class="rev-stars">★★★★★</div>
-                    <span class="rev-quote-icon">“</span>
-                    <p class="rev-text" data-cs="Útulná cukrárna s milou obsluhou. Vynikající zákusky. Doporučujeme 🥰"
-                        data-de="Gemütliche Konditorei mit netter Bedienung. Hervorragende Desserts. Wir empfehlen 🥰">
-                        Útulná cukrárna s milou obsluhou. Vynikající zákusky. Doporučujeme 🥰</p>
-                    <div class="rev-author">— Hana</div>
-                </div>
+            <div class="lightbox-frame">
+                <img id="lightbox-img" src="" alt="Zvětšený náhled fotky">
             </div>
 
-            <div class="reviews-source"
-                style="text-align: center; margin-top: 30px; font-family: var(--font-body); color: var(--clr-text-light); opacity: 0.7; font-size: 0.9rem;">
-                Hodnocení našich zákazníků z veřejného profilu <a
-                    href="https://maps.google.com/?q=50.0789831,12.3673872" target="_blank"
-                    style="color: var(--clr-gold); text-decoration: none;">Google Maps</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Galerie -->
-    <section class="gallery-section dark-realm" id="zazitek">
-        <div class="container text-center slide-up">
-            <h2 data-cs="Z pod rukou našich mistrů" data-de="Aus den Händen unserer Meister">Z pod rukou našich mistrů
-            </h2>
-            <div class="divider-ornate gold">
-                <span></span><svg width="20" height="20" viewBox="0 0 20 20">
-                    <path d="M10 0L12 8L20 10L12 12L10 20L8 12L0 10L8 8L10 0Z" fill="currentColor" />
-                </svg><span></span>
-            </div>
+            <button class="lightbox-nav lb-next" id="lb-next" aria-label="Další obrázek">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"></path>
+                </svg>
+            </button>
         </div>
 
-        <div class="accordion-gallery slide-up delay-1">
-            <div class="accordion-item g-item">
-                <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1200&auto=format&fit=crop"
-                    class="accordion-img g-photo" alt="Různé zákusky">
-                <div class="accordion-content">
-                    <h3 data-cs="Sladké Umění" data-de="Süße Kunst">Sladké Umění</h3>
-                    <p data-cs="Každý kousek je originál." data-de="Jedes Stück ist ein Original.">Každý kousek je
-                        originál.</p>
-                </div>
-            </div>
 
-            <div class="accordion-item g-item">
-                <img src="https://images.unsplash.com/photo-1514056052883-d017fddd0426?q=80&w=1200&auto=format&fit=crop"
-                    class="accordion-img g-photo" alt="Dezerty">
-                <div class="accordion-content">
-                    <h3 data-cs="Jemné Tóny" data-de="Sanfte Töne">Jemné Tóny</h3>
-                    <p data-cs="Lehkost a preciznost v jednom." data-de="Leichtigkeit und Präzision in einem.">Lehkost a
-                        preciznost v jednom.</p>
-                </div>
-            </div>
-
-            <div class="accordion-item g-item">
-                <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?q=80&w=1200&auto=format&fit=crop"
-                    class="accordion-img g-photo" alt="Cukrářská práce">
-                <div class="accordion-content">
-                    <h3 data-cs="Poctivé Řemeslo" data-de="Ehrliches Handwerk">Poctivé Řemeslo</h3>
-                    <p data-cs="Jen ty nejlepší suroviny." data-de="Nur die besten Zutaten.">Jen ty nejlepší suroviny.
-                    </p>
-                </div>
-            </div>
-
-            <div class="accordion-item g-item">
-                <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?q=80&w=1200&auto=format&fit=crop"
-                    class="accordion-img g-photo" alt="Detaily zákusků">
-                <div class="accordion-content">
-                    <h3 data-cs="Dokonalý Detail" data-de="Perfektes Detail">Dokonalý Detail</h3>
-                    <p data-cs="Láska zakódovaná v chuti." data-de="Liebe im Geschmack kodiert.">Láska zakódovaná v
-                        chuti.</p>
-                </div>
-            </div>
-
-            <div class="accordion-item g-item">
-                <img src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?q=80&w=1200&auto=format&fit=crop"
-                    class="accordion-img g-photo" alt="Svatební krása">
-                <div class="accordion-content">
-                    <h3 data-cs="Váš Den" data-de="Ihr Tag">Váš Den</h3>
-                    <p data-cs="Nezapomenutelné momenty." data-de="Unvergessliche Momenty.">Nezapomenutelné momenty.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Zlatý Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <span class="close-lightbox" id="close-lightbox">&times;</span>
-        <div class="lightbox-frame">
-            <img id="lightbox-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                alt="Zvětšený náhled fotky">
-        </div>
-    </div>
-
-
-    <!-- Footer -->
-    <footer id="kontakt" class="royal-footer">
-        <div class="footer-top-border"></div>
-        <div class="container">
-            <div class="footer-crest slide-up text-center">
-                <div class="crest-box-footer">
-                    <svg class="flourish flourish-top" viewBox="0 0 100 20" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M50 10c-5-2-10-8-15-8s-10 6-15 6-10-6-15-6-5 2-5 8" stroke="currentColor"
-                            stroke-width="1.2" stroke-linecap="round" />
-                        <path d="M50 10c5-2 10-8 15-8s10 6 15 6 10-6 15-6 5 2 5 8" stroke="currentColor"
-                            stroke-width="1.2" stroke-linecap="round" />
-                        <circle cx="50" cy="10" r="1.5" fill="currentColor" />
-                    </svg>
-                    <span class="crest-top" data-cs="Cukrárna" data-de="Konditorei">CUKRÁRNA</span>
-                    <span class="logo-main">KAPUCÍN</span>
-                    <svg class="flourish flourish-bottom" viewBox="0 0 100 20" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M50 10c-5-2-10-8-15-8s-10 6-15 6-10-6-15-6-5 2-5 8" stroke="currentColor"
-                            stroke-width="1.2" stroke-linecap="round" />
-                        <path d="M50 10c5-2 10-8 15-8s10 6 15 6 10-6 15-6 5 2 5 8" stroke="currentColor"
-                            stroke-width="1.2" stroke-linecap="round" />
-                        <circle cx="50" cy="10" r="1.5" fill="currentColor" />
-                    </svg>
-                </div>
-            </div>
-
-            <div class="footer-realm slide-up delay-1">
-                <!-- Col 1: Lokace -->
-                <div class="f-col block-addr">
-                    <h5 data-cs="Najdete nás" data-de="Sie finden uns">Najdete nás</h5>
-                    <p>Židovská 399/22<br>350 02 Cheb</p>
-                    <a href="https://maps.google.com/?q=50.0789831,12.3673872" target="_blank" class="f-link-gold"
-                        data-cs="Ukázat na mapě" data-de="Auf der Karte anzeigen">Ukázat na mapě</a>
+        <!-- Footer -->
+        <footer id="kontakt" class="royal-footer">
+            <div class="footer-top-border"></div>
+            <div class="container">
+                <div class="footer-crest slide-up text-center">
+                    <div class="crest-box-footer">
+                        <svg class="flourish flourish-top" viewBox="0 0 100 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 10c-5-2-10-8-15-8s-10 6-15 6-10-6-15-6-5 2-5 8" stroke="currentColor"
+                                stroke-width="1.2" stroke-linecap="round" />
+                            <path d="M50 10c5-2 10-8 15-8s10 6 15 6 10-6 15-6 5 2 5 8" stroke="currentColor"
+                                stroke-width="1.2" stroke-linecap="round" />
+                            <circle cx="50" cy="10" r="1.5" fill="currentColor" />
+                        </svg>
+                        <span class="crest-top" data-cs="Cukrárna" data-de="Konditorei">CUKRÁRNA</span>
+                        <span class="logo-main">KAPUCÍN</span>
+                        <svg class="flourish flourish-bottom" viewBox="0 0 100 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 10c-5-2-10-8-15-8s-10 6-15 6-10-6-15-6-5 2-5 8" stroke="currentColor"
+                                stroke-width="1.2" stroke-linecap="round" />
+                            <path d="M50 10c5-2 10-8 15-8s10 6 15 6 10-6 15-6 5 2 5 8" stroke="currentColor"
+                                stroke-width="1.2" stroke-linecap="round" />
+                            <circle cx="50" cy="10" r="1.5" fill="currentColor" />
+                        </svg>
+                    </div>
                 </div>
 
-                <!-- Col 2: Kontakt -->
-                <div class="f-col block-contact">
-                    <h5 data-cs="Obecné Dotazy" data-de="Allgemeine Anfragen">Obecné Dotazy</h5>
-                    <a href="tel:+420354422893" class="f-link-block call-link">+420 354 422 893</a>
-                    <a href="mailto:Romana.rathouska@seznam.cz"
-                        class="f-link-block mail-link">Romana.rathouska@seznam.cz</a>
-                </div>
+                <div class="footer-realm slide-up delay-1">
+                    <!-- Col 1: Lokace -->
+                    <div class="f-col block-addr">
+                        <h5 data-cs="Najdete nás" data-de="Sie finden uns">Najdete nás</h5>
+                        <p>Židovská 399/22<br>350 02 Cheb</p>
+                        <a href="https://maps.google.com/?q=50.0789831,12.3673872" target="_blank" class="f-link-gold"
+                            data-cs="Ukázat na mapě" data-de="Auf der Karte anzeigen">Ukázat na mapě</a>
+                    </div>
 
-                <!-- Col 3: Otevírací doba -->
-                <div class="f-col block-time">
-                    <h5 data-cs="Otevírací Doba" data-de="Öffnungszeiten">Otevírací Doba</h5>
-                    <div class="time-list">
-                        <div class="t-row">
-                            <span data-cs="Po - Pá" data-de="Mo - Fr">Po - Pá</span>
-                            <span>07:00 – 17:00</span>
-                        </div>
-                        <div class="t-row">
-                            <span data-cs="Sobota" data-de="Samstag">Sobota</span>
-                            <span>08:00 – 12:00</span>
-                        </div>
-                        <div class="t-row closed">
-                            <span data-cs="Neděle" data-de="Sonntag">Neděle</span>
-                            <span data-cs="Zavřeno" data-de="Geschlossen">Zavřeno</span>
+                    <!-- Col 2: Kontakt -->
+                    <div class="f-col block-contact">
+                        <h5 data-cs="Obecné Dotazy" data-de="Allgemeine Anfragen">Obecné Dotazy</h5>
+                        <a href="tel:+420354422893" class="f-link-block call-link">+420 354 422 893</a>
+                        <a href="mailto:Romana.rathouska@seznam.cz"
+                            class="f-link-block mail-link">Romana.rathouska@seznam.cz</a>
+                    </div>
+
+                    <!-- Col 3: Otevírací doba -->
+                    <div class="f-col block-time">
+                        <h5 data-cs="Otevírací Doba" data-de="Öffnungszeiten">Otevírací Doba</h5>
+                        <div class="time-list">
+                            <div class="t-row">
+                                <span data-cs="Po - Pá" data-de="Mo - Fr">Po - Pá</span>
+                                <span>07:00 – 17:00</span>
+                            </div>
+                            <div class="t-row">
+                                <span data-cs="Sobota" data-de="Samstag">Sobota</span>
+                                <span>08:00 – 12:00</span>
+                            </div>
+                            <div class="t-row closed">
+                                <span data-cs="Neděle" data-de="Sonntag">Neděle</span>
+                                <span data-cs="Zavřeno" data-de="Geschlossen">Zavřeno</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="footer-bottom">
-                &copy; 2024 Cukrárna KAPUCÍN. <span data-cs="Mistrovství a Cukrářská Tradice."
-                    data-de="Meisterschaft und Konditortradition.">Mistrovství a Cukrářská Tradice.</span>
-                <span class="footer-bottom-muted" data-cs="Přijímáme platby kartou, hotově i stravenkami."
-                    data-de="Wir akzeptieren Zahlungen mit Karte, in bar und mit Essensgutscheinen.">Přijímáme platby
-                    kartou, hotově i stravenkami.</span>
+                <div class="footer-bottom">
+                    &copy; 2024 Cukrárna KAPUCÍN. <span data-cs="Mistrovství a Cukrářská Tradice."
+                        data-de="Meisterschaft und Konditortradition.">Mistrovství a Cukrářská Tradice.</span>
+                    <span class="footer-bottom-muted" data-cs="Přijímáme platby kartou, hotově i stravenkami."
+                        data-de="Wir akzeptieren Zahlungen mit Karte, in bar und mit Essensgutscheinen.">Přijímáme
+                        platby
+                        kartou, hotově i stravenkami.</span>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div> <!-- konec page-wrapper -->
 
     <script src="script.js"></script>
 </body>
