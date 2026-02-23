@@ -4,7 +4,11 @@ const langBtns = document.querySelectorAll('.lang-btn');
 
 function setLanguage(lang) {
     langBtns.forEach(btn => {
-        if (btn.innerText.toLowerCase() === lang) {
+        const btnLang = btn.innerText.toLowerCase();
+        // Map cs to cz for the comparison
+        const targetLang = lang === 'cs' ? 'cz' : lang;
+
+        if (btnLang === targetLang) {
             btn.classList.add('active');
         } else {
             btn.classList.remove('active');
@@ -71,43 +75,71 @@ const animatedElements = document.querySelectorAll('.fade-in, .slide-up');
 const sections = document.querySelectorAll('section, header');
 const navLinks = document.querySelectorAll('.nav-link');
 
+let isScrolling = false;
+
 function handleScroll() {
-    // Navigace Shadow
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    if (!isScrolling) {
+        window.requestAnimationFrame(() => {
+            const scrollPos = window.scrollY;
+
+            // Navigace Shadow & Plynulost přechodu
+            if (scrollPos > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Prvky do Viewportu (Animace)
+            animatedElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const isInView = (rect.top <= window.innerHeight * 0.85);
+                if (isInView) {
+                    el.classList.add('in-view');
+                }
+            });
+
+            // Zvýraznění aktivní sekce (Plynulejší detekce středu obrazovky)
+            let current = '';
+            const scrollOffset = window.innerHeight / 3;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollPos >= (sectionTop - scrollOffset)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+
+            isScrolling = false;
+        });
+        isScrolling = true;
     }
+}
 
-    // Prvky do Viewportu (Animace)
-    animatedElements.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        const isInView = (rect.top <= window.innerHeight * 0.85);
-        if (isInView) {
-            el.classList.add('in-view');
-        }
-    });
-
-    // Zvýraznění aktivní sekce v navigaci
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= (sectionTop - 150)) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
-            link.classList.add('active');
-        }
+// ----- Kopírování E-mailu v Kontakt bloku -----
+const copyEmailEcBtn = document.getElementById('copy-email-ec');
+if (copyEmailEcBtn) {
+    copyEmailEcBtn.addEventListener('click', () => {
+        const email = copyEmailEcBtn.getAttribute('data-email');
+        navigator.clipboard.writeText(email).then(() => {
+            showToast();
+        });
     });
 }
 
-window.addEventListener('scroll', handleScroll);
-window.addEventListener('load', handleScroll); // Inicialní check po načtení
+window.addEventListener('scroll', handleScroll, { passive: true });
+window.addEventListener('load', () => {
+    // Okamžitý check pozice bez animace na startu
+    handleScroll();
+    // Malá pojistka pro "usazení" layoutu
+    setTimeout(handleScroll, 100);
+});
 
 // ----- Lightbox pro galerii -----
 const lightbox = document.getElementById('lightbox');

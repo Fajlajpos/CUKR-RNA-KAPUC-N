@@ -346,7 +346,12 @@ a:hover {
     justify-content: space-between;
     gap: 40px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    /* Targeted transitions instead of 'all' */
+    transition: background 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+        padding 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+        top 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: background, padding, box-shadow;
 }
 
 .floating-nav.scrolled .nav-glass-pill {
@@ -422,9 +427,9 @@ a:hover {
     bottom: -2px;
     left: 50%;
     width: 0;
-    height: 1px;
+    height: 1.5px;
     background-color: var(--clr-gold);
-    transition: width 0.4s ease, left 0.4s ease;
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1), left 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .nav-links-desktop .nav-link:hover,
@@ -456,7 +461,7 @@ a:hover {
     font-family: var(--font-heading);
     font-size: 0.85rem;
     cursor: pointer;
-    transition: color 0.3s;
+    transition: color 0.3s ease, opacity 0.3s ease;
     opacity: 0.5;
 }
 
@@ -1522,8 +1527,16 @@ a:hover {
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-a.ec-item:hover {
+.ec-item:hover {
     transform: translateY(-5px);
+}
+
+.ec-item {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
 }
 
 .ec-icon {
@@ -1536,13 +1549,15 @@ a.ec-item:hover {
     background: rgba(192, 146, 74, 0.05);
     border-radius: 50%;
     border: 1px dashed var(--clr-gold);
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-a.ec-item:hover .ec-icon {
+.ec-item:hover .ec-icon {
     background: var(--clr-gold);
     color: #fff;
     border-style: solid;
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 10px 20px rgba(192, 146, 74, 0.2);
 }
 
 .ec-icon svg {
@@ -1570,7 +1585,7 @@ a.ec-item:hover .ec-icon {
     transition: var(--transition);
 }
 
-a.ec-item:hover .ec-value {
+.ec-item:hover .ec-value {
     color: var(--clr-gold-dim);
 }
 
