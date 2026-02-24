@@ -217,3 +217,31 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') lbPrev.click();
     if (e.key === 'ArrowRight') lbNext.click();
 });
+
+// ----- Podpora gest (Swipe) pro mobilní galerii -----
+let touchStartX = 0;
+let touchEndX = 0;
+const swipeThreshold = 50; // minimální délka swajpu v px
+
+lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+lightbox.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, { passive: true });
+
+function handleSwipe() {
+    const swipeDistance = touchEndX - touchStartX;
+
+    if (Math.abs(swipeDistance) > swipeThreshold) {
+        if (swipeDistance < 0) {
+            // Swajp doleva -> další obrázek
+            lbNext.click();
+        } else {
+            // Swajp doprava -> předchozí obrázek
+            lbPrev.click();
+        }
+    }
+}
