@@ -3,12 +3,13 @@ const translatableElements = document.querySelectorAll('[data-cs][data-de]');
 const langBtns = document.querySelectorAll('.lang-btn');
 
 function setLanguage(lang) {
-    langBtns.forEach(btn => {
-        const btnLang = btn.innerText.toLowerCase();
-        // Map cs to cz for the comparison
-        const targetLang = lang === 'cs' ? 'cz' : lang;
+    // Select ALL language buttons in the document (navbar + fs-menu)
+    const allLangBtns = document.querySelectorAll('.lang-btn');
+    allLangBtns.forEach(btn => {
+        const btnLang = btn.getAttribute('data-lang') || btn.innerText.toLowerCase();
+        const isMatch = (btnLang === 'cs' && lang === 'cs') || (btnLang === 'cz' && lang === 'cs') || (btnLang === lang);
 
-        if (btnLang === targetLang) {
+        if (isMatch) {
             btn.classList.add('active');
         } else {
             btn.classList.remove('active');
@@ -36,8 +37,33 @@ const fsLinks = document.querySelectorAll('.fs-link');
 
 function toggleMobileMenu() {
     mobileNav.classList.toggle('active');
-    document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    if (mobileNav.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
 }
+
+// Robustní obnovení scrollu
+function enableScroll() {
+    document.body.style.overflow = '';
+}
+
+// Event listener pro odkazy v mobilním menu - zavřít menu a pustit scroll
+document.querySelectorAll('.fs-link').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+        enableScroll();
+    });
+});
+
+// Zavření menu při kliknutí na pozadí (pokud existuje overlay element)
+mobileNav.addEventListener('click', (e) => {
+    if (e.target === mobileNav) {
+        mobileNav.classList.remove('active');
+        enableScroll();
+    }
+});
 
 mobileMenuBtn.addEventListener('click', toggleMobileMenu);
 closeMenuBtn.addEventListener('click', toggleMobileMenu);
@@ -64,9 +90,11 @@ if (copyEmailBtn) {
 
 function showToast() {
     toast.classList.add('show');
-    setTimeout(() => {
+    // Clear any existing timeout to prevent overlapping clears
+    if (window.toastTimeout) clearTimeout(window.toastTimeout);
+    window.toastTimeout = setTimeout(() => {
         toast.classList.remove('show');
-    }, 3000);
+    }, 2000); // Shortened to 2s
 }
 
 // ----- Sticky Navigace & Aktivní linky při skrolování -----
