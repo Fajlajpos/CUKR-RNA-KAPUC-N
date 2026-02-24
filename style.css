@@ -52,6 +52,7 @@ body {
     font-size: 16px;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
 /* Klička pro zabránění horizontálnímu scrollu bez rozbití pozice sticky: aplikovat na wrapper vrstvu */
@@ -2050,7 +2051,7 @@ a:hover {
     }
 
     .lang-switch-modern .lang-btn {
-        padding: 8px 10px !important;
+        padding: 8px 4px !important;
         /* Smaller padding */
     }
 
@@ -2187,7 +2188,7 @@ a:hover {
         flex-direction: column-reverse;
         /* IMAGE BELOW TEXT */
         gap: 40px;
-        padding: 40px 15px 180px;
+        padding: 40px 15px 450px !important;
         /* Definitive gap to prevent section overlap */
     }
 
