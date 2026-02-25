@@ -2149,12 +2149,16 @@ a:hover {
     }
 
     .nav-glass-pill {
-        width: 96%;
+        width: calc(100% - 16px);
+        margin: 0 8px;
         max-width: 600px;
-        /* Increased for Tablets */
         gap: 5px;
-        padding: 5px 15px;
+        padding: 5px 10px;
         justify-content: space-between;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        /* Prevent spill */
     }
 
     .crest-box-nav .crest-main-nav {
@@ -2168,8 +2172,13 @@ a:hover {
 
     .crest-box {
         margin: 0;
-        transform: scale(0.9);
+        transform: scale(0.85);
         transform-origin: left center;
+        min-width: 0;
+        flex-shrink: 1;
+        /* Allow logo to shrink if needed */
+        max-width: 35%;
+        /* Ensure it doesn't hog space */
     }
 
     .fs-footer {
@@ -2254,6 +2263,8 @@ a:hover {
         visibility: visible !important;
         opacity: 1 !important;
         z-index: 5001 !important;
+        flex-shrink: 0;
+        /* Never allow the button to be squashed */
     }
 
     /* Standard high-z-index for the navigation pill on mobile */
@@ -2619,6 +2630,15 @@ a:hover {
 
 /* Extra small devices (phones) */
 @media (max-width: 480px) {
+    .nav-glass-pill {
+        gap: 2px;
+        padding: 5px 8px;
+    }
+
+    .nav-actions {
+        gap: 2px;
+    }
+
     .container {
         padding: 0 5%;
         max-width: 100vw;
