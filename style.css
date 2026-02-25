@@ -484,8 +484,8 @@ a:hover {
 }
 
 .menu-toggle-modern {
-    display: none;
-    /* Na PC skryto */
+    display: none !important;
+    /* Skryto na PC (nad 1024px) */
     flex-direction: column;
     gap: 6px;
     background: transparent;
@@ -2086,16 +2086,24 @@ a:hover {
 }
 
 
-/* Responsive */
-@media (max-width: 992px) {
+/* Responsive Optimization (Standardized to 1024px) */
+@media (max-width: 1024px) {
 
     .nav-links-desktop,
     .top-bar-text {
-        display: none;
+        display: none !important;
     }
 
     .menu-toggle-modern {
-        display: flex;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        /* Larger hit area */
+        height: 44px;
+        margin-left: 0;
+        padding: 0;
     }
 
     .top-bar-inner {
@@ -2121,17 +2129,6 @@ a:hover {
         font-size: 1.8rem;
     }
 
-    .menu-toggle-modern {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 44px;
-        /* Larger hit area */
-        height: 44px;
-        margin-left: 0;
-        padding: 0;
-    }
 
     .lang-switch-modern {
         gap: 0;
@@ -2153,10 +2150,10 @@ a:hover {
 
     .nav-glass-pill {
         width: 96%;
-        /* Slightly wider to accommodate logo and actions */
-        max-width: 500px;
+        max-width: 600px;
+        /* Increased for Tablets */
         gap: 5px;
-        padding: 5px 12px;
+        padding: 5px 15px;
         justify-content: space-between;
     }
 
@@ -2251,12 +2248,17 @@ a:hover {
         bottom: 20%;
     }
 
-    /* Fix potential invisibility bug */
+    /* Force menu visibility on ALL mobile/tablet widths */
     .menu-toggle-modern {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
-        z-index: 5000 !important;
+        z-index: 5001 !important;
+    }
+
+    /* Standard high-z-index for the navigation pill on mobile */
+    .nav-glass-pill {
+        z-index: 5000;
     }
 
     .giant-logo-main {

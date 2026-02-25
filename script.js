@@ -54,11 +54,20 @@ function enableScroll() {
     document.body.style.overflow = '';
     if (mobileNav) mobileNav.classList.remove('active');
 
-    // Explicit reset for navbar components (fix for disappearing bug)
-    if (mobileMenuBtn) {
-        mobileMenuBtn.style.display = 'flex';
-        mobileMenuBtn.style.opacity = '1';
-        mobileMenuBtn.style.visibility = 'visible';
+    // Explicit reset for navbar components ONLY on mobile/tablet widths
+    if (window.innerWidth <= 1024) {
+        if (mobileMenuBtn) {
+            mobileMenuBtn.style.setProperty('display', 'flex', 'important');
+            mobileMenuBtn.style.setProperty('opacity', '1', 'important');
+            mobileMenuBtn.style.setProperty('visibility', 'visible', 'important');
+        }
+    } else {
+        // On desktop, ensure it follows CSS (which is display: none)
+        if (mobileMenuBtn) {
+            mobileMenuBtn.style.removeProperty('display');
+            mobileMenuBtn.style.removeProperty('opacity');
+            mobileMenuBtn.style.removeProperty('visibility');
+        }
     }
     if (navbar) navbar.style.visibility = 'visible';
 }
