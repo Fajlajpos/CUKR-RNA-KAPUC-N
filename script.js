@@ -273,3 +273,31 @@ function handleSwipe() {
         }
     }
 }
+
+// ----- Privacy Policy Modal -----
+const privacyTrigger = document.getElementById('privacy-trigger');
+const privacyModal = document.getElementById('privacy-modal');
+const pmClose = document.getElementById('pm-close');
+const pmOverlay = privacyModal ? privacyModal.querySelector('.pm-overlay') : null;
+
+if (privacyTrigger && privacyModal) {
+    privacyTrigger.addEventListener('click', () => {
+        privacyModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+}
+
+function closePrivacyModal() {
+    privacyModal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+if (pmClose) pmClose.addEventListener('click', closePrivacyModal);
+if (pmOverlay) pmOverlay.addEventListener('click', closePrivacyModal);
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && privacyModal && privacyModal.classList.contains('active')) {
+        closePrivacyModal();
+    }
+});

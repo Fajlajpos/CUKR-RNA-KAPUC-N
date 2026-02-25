@@ -1907,7 +1907,7 @@ a:hover {
 
 .f-col h5 {
     color: var(--clr-gold);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 1.5rem;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -1916,6 +1916,13 @@ a:hover {
 .f-col p {
     color: var(--clr-text-light);
     margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.f-col-legal p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    opacity: 0.8;
 }
 
 .f-link-block {
@@ -1967,11 +1974,92 @@ a:hover {
     font-size: 0.9rem;
 }
 
+.privacy-trigger {
+    color: var(--clr-gold);
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+
+.privacy-trigger:hover {
+    color: #fff;
+}
+
 .footer-bottom-muted {
     display: block;
     margin-top: 5px;
     font-size: 0.8rem;
     opacity: 0.7;
+}
+
+/* Privacy Modal Styles */
+.privacy-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 4000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    padding: 20px;
+}
+
+.privacy-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.pm-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+}
+
+.pm-inner {
+    position: relative;
+    background: var(--clr-bg-dark);
+    border: 1px solid var(--clr-gold);
+    max-width: 600px;
+    width: 100%;
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    transform: translateY(20px);
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.privacy-modal.active .pm-inner {
+    transform: translateY(0);
+}
+
+.pm-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: var(--clr-gold);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.pm-content h3 {
+    color: var(--clr-gold);
+    font-family: var(--font-heading);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.pm-content p {
+    color: var(--clr-text-light);
+    line-height: 1.8;
+    margin-bottom: 15px;
 }
 
 /* Animace Elementů */
