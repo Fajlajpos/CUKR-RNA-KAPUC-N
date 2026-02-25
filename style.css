@@ -277,22 +277,34 @@ a:hover {
     position: absolute;
     right: 80px;
     top: 50%;
-    transform: translateY(-50%) translateX(10px);
+    transform: translateY(-50%) translateX(15px);
     background-color: var(--clr-bg-dark);
     color: var(--clr-gold);
-    padding: 8px 16px;
+    padding: 10px 20px;
     font-family: var(--font-body);
-    font-size: 0.85rem;
-    font-style: italic;
-    border: 1px solid rgba(192, 146, 74, 0.3);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid var(--clr-gold);
     visibility: hidden;
     opacity: 0;
     white-space: nowrap;
-    transition: var(--transition);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease;
     border-radius: var(--radius);
+    pointer-events: none;
+    z-index: 100;
 }
 
-.contact-btn:hover .contact-tooltip {
+/* Show tooltip only on devices that support hover */
+@media (hover: hover) {
+    .contact-btn:hover .contact-tooltip {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+    }
+}
+
+/* Manual show class for mobile/JS control */
+.contact-tooltip.show {
     visibility: visible;
     opacity: 1;
     transform: translateY(-50%) translateX(0);

@@ -40,18 +40,53 @@ const mobileNav = document.getElementById('mobile-nav');
 const fsLinks = document.querySelectorAll('.fs-link');
 
 function toggleMobileMenu() {
-    mobileNav.classList.toggle('active');
-    if (mobileNav.classList.contains('active')) {
+    const isActive = mobileNav.classList.toggle('active');
+
+    if (isActive) {
         document.body.style.overflow = 'hidden';
     } else {
-        document.body.style.overflow = '';
+        enableScroll();
     }
 }
 
-// Robustní obnovení scrollu
+// Robustní obnovení scrollu + reset UI
 function enableScroll() {
     document.body.style.overflow = '';
+    if (mobileNav) mobileNav.classList.remove('active');
+
+    // Explicit reset for navbar components (fix for disappearing bug)
+    if (mobileMenuBtn) {
+        mobileMenuBtn.style.display = 'flex';
+        mobileMenuBtn.style.opacity = '1';
+        mobileMenuBtn.style.visibility = 'visible';
+    }
+    if (navbar) navbar.style.visibility = 'visible';
 }
+
+// Handler pro zobrazení popisku na mobilu (automatické zmizení)
+function triggerMobileTooltip(btn) {
+    const tooltip = btn.querySelector('.contact-tooltip');
+    if (!tooltip) return;
+
+    // Pokud už se zobrazuje, nic neděláme
+    if (tooltip.classList.contains('show')) return;
+
+    tooltip.classList.add('show');
+
+    setTimeout(() => {
+        tooltip.classList.remove('show');
+    }, 2500); // Zmizí po 2.5 sekundách
+}
+
+// Event listener pro kontaktní tlačítka na mobilu
+document.querySelectorAll('.contact-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        // Kontrola, zda jsme na dotykovém zařízení
+        if (window.matchMedia("(hover: none)").matches) {
+            triggerMobileTooltip(btn);
+        }
+    });
+});
 
 // Event listener pro odkazy v mobilním menu - zavřít menu a pustit scroll
 document.querySelectorAll('.fs-link').forEach(link => {
@@ -74,8 +109,7 @@ closeMenuBtn.addEventListener('click', toggleMobileMenu);
 
 fsLinks.forEach(link => {
     link.addEventListener('click', () => {
-        mobileNav.classList.remove('active');
-        document.body.style.overflow = '';
+        enableScroll();
     });
 });
 
