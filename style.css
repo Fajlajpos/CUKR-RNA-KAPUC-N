@@ -369,7 +369,6 @@ a:hover {
 .floating-nav.scrolled .nav-glass-pill {
     background: rgba(43, 30, 22, 0.9);
     padding: 8px 30px;
-    top: 10px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
@@ -514,6 +513,15 @@ a:hover {
 
 .menu-toggle-modern:hover .line-bottom {
     transform: translateX(-100%);
+}
+
+/* Disable hover translate on touch devices to prevent "stuck" states */
+@media (hover: none) {
+
+    .menu-toggle-modern:hover .line-top,
+    .menu-toggle-modern:hover .line-bottom {
+        transform: none !important;
+    }
 }
 
 /* Avant-Garde Fullscreen Overlay Menu */
@@ -2157,8 +2165,13 @@ a:hover {
         justify-content: space-between;
         display: flex;
         align-items: center;
-        overflow: hidden;
-        /* Prevent spill */
+        overflow: visible;
+        /* Prevent clipping of icon during transitions */
+    }
+
+    /* Fixed padding for scrolled state on mobile */
+    .floating-nav.scrolled .nav-glass-pill {
+        padding: 5px 10px !important;
     }
 
     .crest-box-nav .crest-main-nav {
