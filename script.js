@@ -25,6 +25,29 @@ function setLanguage(lang) {
             el.innerText = text;
         }
     });
+
+    // SEO Dynamic Update
+    const seoContent = {
+        'cs': {
+            'title': 'KAPUCÍN | Zakázkové Cukrářství Cheb',
+            'desc': 'Poctivé zakázkové cukrářství v Chebu s tradicí od roku 1991. Nabízíme svatební dorty, zákusky na oslavy, chlebíčky a slané občerstvení.'
+        },
+        'de': {
+            'title': 'KAPUCÍN | Auftragskonditorei Eger',
+            'desc': 'Ehrliche Auftragskonditorei in Eger mit Tradition seit 1991. Wir bieten Hochzeitstorten, Desserts für Feiern, belegte Brötchen und herzhafte Snacks.'
+        }
+    };
+
+    if (seoContent[lang]) {
+        document.title = seoContent[lang].title;
+        const metaDesc = document.getElementById('meta-description');
+        if (metaDesc) {
+            metaDesc.setAttribute('content', seoContent[lang].desc);
+        }
+    }
+
+    // Update html lang attribute
+    document.documentElement.lang = lang;
 }
 
 // Initial language check
