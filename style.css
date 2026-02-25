@@ -1464,17 +1464,6 @@ a:hover {
     background-color: transparent;
 }
 
-.elegant-contact-block::before {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    right: -20px;
-    bottom: -20px;
-    border: 1px solid rgba(192, 146, 74, 0.2);
-    z-index: 0;
-    pointer-events: none;
-}
 
 .ec-inner {
     background-color: var(--clr-bg-light);
@@ -2222,10 +2211,13 @@ a:hover {
 
     .ss-container {
         flex-direction: column-reverse;
+        align-items: center;
+        /* CENTER CONTENT ON MOBILE */
         /* IMAGE BELOW TEXT */
         gap: 30px;
-        padding: 40px 15px 180px !important;
-        /* Balanced gap to prevent overlap while reducing empty space */
+        padding: 40px 15px 60px !important;
+        /* Reduced even more for better look */
+        /* Reduced gap below photo */
         overflow: hidden;
         /* Fallback for safe layout */
         max-width: 100vw;
@@ -2574,9 +2566,6 @@ a:hover {
         padding: 20px 15px;
     }
 
-    .ss-img-wrapper {
-        max-height: 220px;
-    }
 
     .r-img-box {
         height: 180px;
