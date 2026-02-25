@@ -3,13 +3,10 @@ const translatableElements = document.querySelectorAll('[data-cs][data-de]');
 const langBtns = document.querySelectorAll('.lang-btn');
 
 function setLanguage(lang) {
-    // Select ALL language buttons in the document (navbar + fs-menu)
     const allLangBtns = document.querySelectorAll('.lang-btn');
     allLangBtns.forEach(btn => {
-        const btnLang = btn.getAttribute('data-lang') || btn.innerText.toLowerCase();
-        const isMatch = (btnLang === 'cs' && lang === 'cs') || (btnLang === 'cz' && lang === 'cs') || (btnLang === lang);
-
-        if (isMatch) {
+        const btnLang = btn.getAttribute('data-lang');
+        if (btnLang === lang) {
             btn.classList.add('active');
         } else {
             btn.classList.remove('active');
@@ -17,17 +14,24 @@ function setLanguage(lang) {
     });
 
     translatableElements.forEach(el => {
-        // Zabráníme záměně tooltipů uvnitř html
+        const text = el.getAttribute(`data-${lang}`);
+        if (!text) return;
+
         if (el.tagName.toLowerCase() === 'span' && el.classList.contains('contact-tooltip')) {
-            el.innerText = el.getAttribute(`data-${lang}`);
-        }
-        else if (el.tagName.toLowerCase() === 'span' || el.tagName.toLowerCase() === 'h1' || el.tagName.toLowerCase() === 'h2' || el.tagName.toLowerCase() === 'h3' || el.tagName.toLowerCase() === 'h4' || el.tagName.toLowerCase() === 'h5' || el.tagName.toLowerCase() === 'p' || el.tagName.toLowerCase() === 'a' || el.tagName.toLowerCase() === 'div') {
-            el.innerHTML = el.getAttribute(`data-${lang}`);
+            el.innerText = text;
+        } else if (['span', 'h1', 'h2', 'h3', 'h4', 'h5', 'p', 'a', 'div'].includes(el.tagName.toLowerCase())) {
+            el.innerHTML = text;
         } else {
-            el.innerText = el.getAttribute(`data-${lang}`);
+            el.innerText = text;
         }
     });
 }
+
+// Initial language check
+document.addEventListener('DOMContentLoaded', () => {
+    // Default to 'cs' if not set, or adjust as needed
+    setLanguage('cs');
+});
 
 // ----- Mobilní menu (Fullscreen Overlay) -----
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -105,6 +109,22 @@ const navLinks = document.querySelectorAll('.nav-link');
 
 let isScrolling = false;
 
+// IntersectionObserver for better mobile performance
+const appearanceObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            // Once seen, we can stop observing this element
+            appearanceObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+});
+
+animatedElements.forEach(el => appearanceObserver.observe(el));
+
 function handleScroll() {
     if (!isScrolling) {
         window.requestAnimationFrame(() => {
@@ -117,22 +137,14 @@ function handleScroll() {
                 navbar.classList.remove('scrolled');
             }
 
-            // Prvky do Viewportu (Animace)
-            animatedElements.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                const isInView = (rect.top <= window.innerHeight * 0.85);
-                if (isInView) {
-                    el.classList.add('in-view');
-                }
-            });
-
             // Zvýraznění aktivní sekce (Plynulejší detekce středu obrazovky)
             let current = '';
             const scrollOffset = window.innerHeight / 3;
 
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                if (scrollPos >= (sectionTop - scrollOffset)) {
+                const sectionHeight = section.offsetHeight;
+                if (scrollPos >= (sectionTop - scrollOffset) && scrollPos < (sectionTop + sectionHeight - scrollOffset)) {
                     current = section.getAttribute('id');
                 }
             });

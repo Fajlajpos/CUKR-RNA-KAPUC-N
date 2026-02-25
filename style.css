@@ -676,10 +676,8 @@ a:hover {
 }
 
 .flourish {
-    width: 100px;
-    /* ZMENŠENO */
-    height: 12px;
-    /* ZMENŠENO */
+    width: 60px;
+    height: 8px;
     color: var(--clr-gold-light);
     opacity: 0.9;
 }
@@ -743,25 +741,7 @@ a:hover {
     transition: 0.3s;
 }
 
-.mobile-nav-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--clr-bg-dark);
-    z-index: 2000;
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    pointer-events: none;
-    transition: var(--transition);
-}
-
-.mobile-nav-overlay.active {
-    opacity: 1;
-    pointer-events: all;
-}
+/** Redundant mobile-nav-overlay removed to prevent conflicts with fullscreen-menu-overlay **/
 
 .mobile-nav-header {
     display: flex;
@@ -2215,51 +2195,56 @@ a:hover {
     }
 
     .pastry-sketch {
-        opacity: 0.08;
+        opacity: 0.15;
+        /* Slightly more visible but subtle */
     }
 
     .ps-1 {
-        width: 70px;
-        height: 70px;
-        left: -10%;
+        width: 35px;
+        height: 35px;
+        left: 5%;
         top: 15%;
     }
 
     .ps-2 {
         display: none;
-        /* Skryto pro čistší vzhled */
     }
 
     .ps-3 {
-        width: 80px;
-        height: 80px;
-        right: 2%;
-        /* Reduced from -10% to prevent overflow */
-        top: 20%;
+        width: 40px;
+        height: 40px;
+        right: 5%;
+        top: 18%;
     }
 
     .ps-4 {
         display: none;
-        /* Skryto pro čistší vzhled */
     }
 
     .ps-5 {
-        width: 50px;
-        height: 50px;
-        left: 5%;
-        bottom: 10%;
+        width: 30px;
+        height: 30px;
+        left: 8%;
+        bottom: 15%;
     }
 
     .ps-6 {
         display: none;
-        /* Skryto pro čistší vzhled */
     }
 
     .ps-8 {
-        width: 40px;
-        height: 40px;
-        right: 10%;
-        bottom: 15%;
+        width: 32px;
+        height: 32px;
+        right: 8%;
+        bottom: 20%;
+    }
+
+    /* Fix potential invisibility bug */
+    .menu-toggle-modern {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 5000 !important;
     }
 
     .giant-logo-main {
