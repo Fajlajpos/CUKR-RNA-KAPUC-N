@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+    <!-- Transparent background is better for favicons, or we can use the light background color of the website (#F9F6F0) -->
+    <rect width="400" height="400" rx="40" fill="#F9F6F0"/>
+    
+    <!-- Top Flourish -->
+    <g transform="translate(150, 110) scale(1)" fill="none" color="#C0924A">
+        <path d="M50 10c-5-2-10-8-15-8s-10 6-15 6-10-6-15-6-5 2-5 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+        <path d="M50 10c5-2 10-8 15-8s10 6 15 6 10-6 15-6 5 2 5 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+        <circle cx="50" cy="10" r="2.5" fill="currentColor" />
+    </g>
+
+    <!-- CUKRÁRNA text (Gold, smaller) -->
+    <text x="200" y="175" font-family="'Cinzel', 'Times New Roman', serif" font-size="28" font-weight="500" fill="#C0924A" text-anchor="middle" letter-spacing="2">CUKRÁRNA</text>
+    
+    <!-- KAPUCÍN text (Dark brown, massive) -->
+    <text x="200" y="250" font-family="'Cinzel', 'Times New Roman', serif" font-size="72" font-weight="500" fill="#3D2B1F" text-anchor="middle" letter-spacing="6">KAPUCÍN</text>
+
+    <!-- Bottom Flourish (Rotated) -->
+    <g transform="translate(200, 290) rotate(180) translate(-200, -290)">
+        <g transform="translate(150, 280) scale(1)" fill="none" color="#C0924A">
+            <path d="M50 10c-5-2-10-8-15-8s-10 6-15 6-10-6-15-6-5 2-5 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+            <path d="M50 10c5-2 10-8 15-8s10 6 15 6 10-6 15-6 5 2 5 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+            <circle cx="50" cy="10" r="2.5" fill="currentColor" />
+        </g>
+    </g>
+</svg>
